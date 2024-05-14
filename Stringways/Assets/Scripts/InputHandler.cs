@@ -8,13 +8,15 @@ public class InputHandler : MonoBehaviour
 
     private Camera _mainCamera;
     public LineRenderer lineRenderer;
-    public GameObject firstObject;
-    public GameObject secondObject;
+    private GameObject firstObject;
+    private GameObject secondObject;
     public GameObject newString;
     public Material lineMaterial; // Material for the line
     public float lineWidth = 0.1f; // Width of the line
     private bool isDrawing = false;
     private bool click = false;
+    private double limeStringRemaining = 9.0f;
+    private double pinkStringRemaining = 9.0f;
     #endregion
 
     void Start()
@@ -52,11 +54,8 @@ public class InputHandler : MonoBehaviour
         if (rayHit.collider.gameObject.tag == "Town" && isDrawing == false)
         {
             isDrawing = true;
-            GameObject line = new GameObject("Line"); // Create a new GameObject for the line
-            lineRenderer = line.AddComponent<LineRenderer>(); // Add LineRenderer component
-            lineRenderer.material = lineMaterial; // Set material
-            lineRenderer.startWidth = lineWidth; // Set start width
-            lineRenderer.endWidth = lineWidth; // Set end width
+            GameObject newPath = Instantiate(newString, new Vector3(0, 0, 0), Quaternion.identity);         
+            lineRenderer = newPath.GetComponent<LineRenderer>();
             firstObject = rayHit.collider.gameObject;
         }
         else
@@ -78,11 +77,11 @@ public class InputHandler : MonoBehaviour
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         //RaycastHit hit;
 
-        // Check if the object hit by the ray has a LineRenderer component
-        LineRenderer lineRenderer = rayHit.collider.gameObject.GetComponent<LineRenderer>();
-        if (lineRenderer != null)
+        if (!rayHit)
+            return;
+
+        if (rayHit.collider.gameObject.tag == "String")
         {
-            // If so, destroy the object
             Destroy(rayHit.collider.gameObject);
         }
         Debug.Log("Right click");
