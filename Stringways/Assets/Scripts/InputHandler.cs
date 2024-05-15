@@ -7,11 +7,12 @@ public class InputHandler : MonoBehaviour
     #region Variables
 
     private Camera _mainCamera;
-    public LineRenderer lineRenderer;
+    private LineRenderer lineRenderer;
     private GameObject firstObject;
     private GameObject secondObject;
     public GameObject newString;
     public Material lineMaterial; // Material for the line
+    private EdgeCollider2D edgeCollider;
     public float lineWidth = 0.1f; // Width of the line
     private bool isDrawing = false;
     private bool click = false;
@@ -22,8 +23,8 @@ public class InputHandler : MonoBehaviour
     void Start()
     {
         _mainCamera = Camera.main;
+        
         lineRenderer.positionCount = 2;
-        Instantiate(newString, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     void Update()
@@ -37,10 +38,11 @@ public class InputHandler : MonoBehaviour
         }
         else
         {
-            if (click)
+            if (click && lineRenderer != null)
             {
                 lineRenderer.SetPosition(0, firstObject.transform.position);
                 lineRenderer.SetPosition(1, secondObject.transform.position);
+                click = false;
             }
 
         }
@@ -54,36 +56,35 @@ public class InputHandler : MonoBehaviour
         if (rayHit.collider.gameObject.tag == "Town" && isDrawing == false)
         {
             isDrawing = true;
-            GameObject newPath = Instantiate(newString, new Vector3(0, 0, 0), Quaternion.identity);         
-            lineRenderer = newPath.GetComponent<LineRenderer>();
+            newString = Instantiate(newString, new Vector3(0, 0, 0), Quaternion.identity);         
+            lineRenderer = newString.GetComponent<LineRenderer>();
             firstObject = rayHit.collider.gameObject;
+            
         }
         else
         {
             if (rayHit.collider.gameObject.tag == "Town")
             {
                 secondObject = rayHit.collider.gameObject;
+                edgeCollider = newString.GetComponent<EdgeCollider2D>();
+                edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
                 isDrawing = false;
+                click = true;
             }
 
         }
-        click = true;
+        
         Debug.Log(rayHit.collider.gameObject.name);
     }
 
     private void OnRightClick()
     {
-        // Create a ray from the camera to the mouse position
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        //RaycastHit hit;
-
-        if (!rayHit)
-            return;
-
         if (rayHit.collider.gameObject.tag == "String")
         {
-            Destroy(rayHit.collider.gameObject);
+           Destroy(rayHit.collider.gameObject);
         }
-        Debug.Log("Right click");
+
+        lineRenderer = new LineRenderer();
     }
 }
