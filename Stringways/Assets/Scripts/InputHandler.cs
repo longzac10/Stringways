@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using TMPro;
 
 public class InputHandler : MonoBehaviour
 {
@@ -18,13 +19,12 @@ public class InputHandler : MonoBehaviour
     private bool click = false;
     private double limeStringRemaining = 9.0f;
     private double pinkStringRemaining = 9.0f;
+    public TMP_Text limeMessageText;
     #endregion
 
     void Start()
     {
         _mainCamera = Camera.main;
-        
-        lineRenderer.positionCount = 2;
     }
 
     void Update()
@@ -55,11 +55,13 @@ public class InputHandler : MonoBehaviour
 
         if (rayHit.collider.gameObject.tag == "Town" && isDrawing == false)
         {
+            
             isDrawing = true;
             newString = Instantiate(newString, new Vector3(0, 0, 0), Quaternion.identity);         
             lineRenderer = newString.GetComponent<LineRenderer>();
             firstObject = rayHit.collider.gameObject;
-            
+            lineRenderer.positionCount = 2;
+
         }
         else
         {
@@ -68,6 +70,9 @@ public class InputHandler : MonoBehaviour
                 secondObject = rayHit.collider.gameObject;
                 edgeCollider = newString.GetComponent<EdgeCollider2D>();
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
+                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position)/4;
+                limeStringRemaining -= distance;
+                limeMessageText.SetText("Lime string remaining: " + limeStringRemaining.ToString() + "cm");
                 isDrawing = false;
                 click = true;
             }
@@ -82,9 +87,12 @@ public class InputHandler : MonoBehaviour
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (rayHit.collider.gameObject.tag == "String")
         {
-           Destroy(rayHit.collider.gameObject);
+            GameObject destroyedObject = rayHit.collider.gameObject;
+            destroyedObject.GetComponent<LineRenderer>().positionCount = 0;
+            EdgeCollider2D destroyedObjectEdgeCollider = destroyedObject.GetComponent<EdgeCollider2D>();
+            destroyedObjectEdgeCollider.points = new Vector2[0];
         }
 
-        lineRenderer = new LineRenderer();
+        
     }
 }

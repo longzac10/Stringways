@@ -627,6 +627,7 @@ MonoBehaviour:
   newString: {fileID: 3464213934811003258, guid: ac5ba2af13524e34896b6576bd8440e1, type: 3}
   lineMaterial: {fileID: 0}
   lineWidth: 0.1
+  limeMessageText: {fileID: 2140710851}
 --- !u!114 &1951864640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,7 +849,7 @@ GameObject:
   - component: {fileID: 2140710852}
   - component: {fileID: 2140710851}
   m_Layer: 5
-  m_Name: String Remaining
+  m_Name: Lime String Remaining
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,7 +895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'String Remaining: '
+  m_text: 'Lime string remaining: 9cm'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
