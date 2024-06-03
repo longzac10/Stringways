@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using TMPro;
+using System.Drawing;
 
 public class InputHandler : MonoBehaviour
 {
@@ -17,14 +18,33 @@ public class InputHandler : MonoBehaviour
     public float lineWidth = 0.1f; // Width of the line
     private bool isDrawing = false;
     private bool click = false;
-    private double limeStringRemaining = 9.0f;
-    private double pinkStringRemaining = 9.0f;
+    private double limeStringRemaining = 900.0f;
+    private double pinkStringRemaining = 900.0f;
     public TMP_Text limeMessageText;
+    private Point[] points = new Point[78];
     #endregion
+
+    public struct Point
+    {
+        public double X { get; set; }
+        public double Y { get; set; }
+
+        public Point(double x, double y)
+        {
+            X = x;
+            Y = y;
+        }
+    }
 
     void Start()
     {
         _mainCamera = Camera.main;
+
+        // Adding all points to the list
+        for (int i = 0; i < 78; i++)
+        {
+            points[i] = new Point(0,0);
+        }
     }
 
     void Update()
@@ -72,7 +92,7 @@ public class InputHandler : MonoBehaviour
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
                 float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position)/4;
                 limeStringRemaining -= distance;
-                limeMessageText.SetText("Lime string remaining: " + limeStringRemaining.ToString() + "cm");
+                limeMessageText.SetText("Lime string remaining: " + limeStringRemaining.ToString("0.00") + "cm");
                 isDrawing = false;
                 click = true;
             }
