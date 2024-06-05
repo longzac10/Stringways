@@ -43,3 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Board
+    uniqueID: 4125135937
+    locked: 0
+  - name: String
+    uniqueID: 668154039
+    locked: 0
+  - name: Towns
+    uniqueID: 3910609631
+    locked: 0

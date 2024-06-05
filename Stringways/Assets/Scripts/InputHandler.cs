@@ -90,9 +90,9 @@ public class InputHandler : MonoBehaviour
                 secondObject = rayHit.collider.gameObject;
                 edgeCollider = newString.GetComponent<EdgeCollider2D>();
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
-                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position)/4;
+                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position)/3;
                 limeStringRemaining -= distance;
-                limeMessageText.SetText("Lime string remaining: " + limeStringRemaining.ToString("0.00") + "cm");
+                limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
                 isDrawing = false;
                 click = true;
             }
