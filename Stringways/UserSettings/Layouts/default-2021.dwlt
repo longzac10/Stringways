@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 54
+  controlID: 113
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 55
+  controlID: 114
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 56
+  controlID: 115
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -590,22 +590,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Zachary\Documents\GitHub\Stringways\Stringways
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 306d0000
-    m_LastClickedID: 27952
-    m_ExpandedIDs: 00000000226d0000246d0000266d0000286d00002a6d0000
+    scrollPos: {x: 0, y: 5.666687}
+    m_SelectedIDs: 866d0000
+    m_LastClickedID: 28038
+    m_ExpandedIDs: 000000006c6d00006e6d0000706d0000726d0000746d00007c6d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -633,7 +633,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000226d0000246d0000266d0000286d00002a6d0000
+    m_ExpandedIDs: 000000006c6d00006e6d0000706d0000726d0000746d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -760,10 +760,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 1032}
-      m_SelectedIDs: 
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: ac6d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 3eeaffff9aedffff26fbffff506b0000
+      m_ExpandedIDs: baddffff68e0ffff80e0ffff82e1ffffcee1ffff26e2ffff9ce2ffff7ee8ffff12eaffff52eaffff1cf0ffffb0f1ffffc0f1ffff8cf6ffffe0f6ffff26fbffff5c6e0000086f0000768b00000a8c0000b68c0000a29200003c94000090a30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1067,9 +1067,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 565.95325, y: 292.99197, z: 2.1067197}
+    m_Target: {x: 496.00565, y: 304.0525, z: -3.150021}
     speed: 2
-    m_Value: {x: 565.95325, y: 292.99197, z: 2.1067197}
+    m_Value: {x: 505.64243, y: 312.3061, z: -3.3250687}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1120,9 +1120,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 319.468
+    m_Target: 371.49323
     speed: 2
-    m_Value: 319.468
+    m_Value: 388.99814
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1219,7 +1219,7 @@ MonoBehaviour:
       y: 21
       width: 1109.3334
       height: 520
-    m_Scale: {x: 1.4306031, y: 1.4306031}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 554.6667, y: 260}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -1227,10 +1227,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -387.71527
-      y: -181.74153
-      width: 775.43054
-      height: 363.48306
+      x: -554.6667
+      y: -260
+      width: 1109.3334
+      height: 520
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1664, y: 811.5}

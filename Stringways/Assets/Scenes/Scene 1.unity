@@ -2856,9 +2856,9 @@ GameObject:
   - component: {fileID: 865451693}
   - component: {fileID: 865451692}
   - component: {fileID: 865451691}
-  - component: {fileID: 865451690}
+  - component: {fileID: 865451694}
   m_Layer: 5
-  m_Name: Score Sheet
+  m_Name: CurrentScenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2885,18 +2885,6 @@ RectTransform:
   m_AnchoredPosition: {x: 338.47998, y: -29}
   m_SizeDelta: {x: 198.4851, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &865451690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865451688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ba8ae59c0e7b641a195ac1941ac997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &865451691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2940,7 +2928,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 865451692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 865451694}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MovetoScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &865451692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2979,6 +2979,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865451688}
   m_CullTransparentMesh: 1
+--- !u!114 &865451694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865451688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9283a69a438fd4eb93c0aef98a007f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &869986511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5633,7 +5645,7 @@ GameObject:
   - component: {fileID: 1826680425}
   - component: {fileID: 1826680424}
   - component: {fileID: 1826680423}
-  - component: {fileID: 1826680422}
+  - component: {fileID: 1826680426}
   m_Layer: 5
   m_Name: Score Sheet
   m_TagString: Untagged
@@ -5662,18 +5674,6 @@ RectTransform:
   m_AnchoredPosition: {x: 338.47998, y: -133}
   m_SizeDelta: {x: 198.4851, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1826680422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826680420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ba8ae59c0e7b641a195ac1941ac997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1826680423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5717,7 +5717,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1826680424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1826680426}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MovetoScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1826680424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5756,6 +5768,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826680420}
   m_CullTransparentMesh: 1
+--- !u!114 &1826680426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826680420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9283a69a438fd4eb93c0aef98a007f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1853246250
 PrefabInstance:
   m_ObjectHideFlags: 0
