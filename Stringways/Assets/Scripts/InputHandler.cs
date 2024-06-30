@@ -24,17 +24,6 @@ public class InputHandler : MonoBehaviour
     private Point[] points = new Point[78];
     #endregion
 
-    public struct Point
-    {
-        public double X { get; set; }
-        public double Y { get; set; }
-
-        public Point(double x, double y)
-        {
-            X = x;
-            Y = y;
-        }
-    }
 
     void Start()
     {
