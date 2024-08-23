@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using TMPro;
 using System.Drawing;
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class InputHandler : MonoBehaviour
 {
@@ -22,6 +25,274 @@ public class InputHandler : MonoBehaviour
     private double pinkStringRemaining = 900.0f;
     public TMP_Text limeMessageText;
     private Point[] points = new Point[78];
+    public int numberTownsVisited = 0;
+    public Button finishButton;
+    private int numberTownsMissed = 78;
+    private int numberNullPathways = 0;
+
+    // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
+    private List<Vector2> pathwaysScenario1 = new List<Vector2>();
+    
+    // Vector2 array of all pairs of points representing all the existing pathways
+    #region Existing Pathways
+    public Vector2[] existingPathways = new Vector2[]
+    {
+            new Vector2(0, 0), new Vector2(6, 1),
+            new Vector2(0, 0), new Vector2(1, 1),
+            new Vector2(0, 0), new Vector2(1, 2),
+            new Vector2(0, 0), new Vector2(1, 4),
+            new Vector2(0, 0), new Vector2(0, 3),
+            new Vector2(0, 3), new Vector2(1, 1),
+            new Vector2(0, 4), new Vector2(2, 2),
+            new Vector2(0, 4), new Vector2(2, 3),
+            new Vector2(0, 4), new Vector2(2, 5),
+            new Vector2(0, 4), new Vector2(0, 5),
+            new Vector2(0, 5), new Vector2(4, 3),
+            new Vector2(0, 5), new Vector2(2, 5),
+            new Vector2(0, 5), new Vector2(1, 7),
+            new Vector2(0, 8), new Vector2(1, 7),
+            new Vector2(0, 8), new Vector2(4, 7),
+            new Vector2(0, 8), new Vector2(2, 10),
+            new Vector2(0, 9), new Vector2(1, 7),
+            new Vector2(0, 9), new Vector2(5, 7),
+            new Vector2(0, 9), new Vector2(4, 12),
+            new Vector2(0, 9), new Vector2(3, 13),
+            new Vector2(0, 9), new Vector2(2, 14),
+            new Vector2(0, 9), new Vector2(1, 12),
+            new Vector2(0, 13), new Vector2(2, 10),
+            new Vector2(0, 13), new Vector2(1, 12),
+            new Vector2(0, 13), new Vector2(3, 12),
+            new Vector2(0, 13), new Vector2(4, 12),
+            new Vector2(0, 13), new Vector2(2, 14),
+
+            new Vector2(1, 1), new Vector2(1, 2),
+            new Vector2(1, 1), new Vector2(3, 1),
+            new Vector2(1, 1), new Vector2(2, 2),
+            new Vector2(1, 1), new Vector2(2, 3),
+            new Vector2(1, 2), new Vector2(2, 5),
+            new Vector2(1, 4), new Vector2(2, 2),
+            new Vector2(1, 7), new Vector2(2, 5),
+            new Vector2(1, 7), new Vector2(4, 4),
+            new Vector2(1, 7), new Vector2(4, 9),
+            new Vector2(1, 7), new Vector2(2, 10),
+            new Vector2(1, 12), new Vector2(2, 10),
+            new Vector2(1, 12), new Vector2(3, 12),
+            new Vector2(1, 12), new Vector2(3, 13),
+
+            new Vector2(2, 2), new Vector2(3, 1),
+            new Vector2(2, 3), new Vector2(2, 2),
+            new Vector2(2, 3), new Vector2(3, 1),
+            new Vector2(2, 3), new Vector2(4, 4),
+            new Vector2(2, 5), new Vector2(2, 3),
+            new Vector2(2, 5), new Vector2(3, 1),
+            new Vector2(2, 5), new Vector2(4, 3),
+            new Vector2(2, 5), new Vector2(4, 4),
+            new Vector2(2, 5), new Vector2(5, 5),
+            new Vector2(2, 5), new Vector2(4, 7),
+            new Vector2(2, 10), new Vector2(4, 7),
+            new Vector2(2, 10), new Vector2(4, 9),
+            new Vector2(2, 10), new Vector2(3, 11),
+            new Vector2(2, 10), new Vector2(3, 12),
+            new Vector2(2, 10), new Vector2(3, 13),
+            new Vector2(2, 14), new Vector2(2, 10),
+            new Vector2(2, 14), new Vector2(3, 13),
+            new Vector2(2, 14), new Vector2(6, 12),
+            new Vector2(2, 14), new Vector2(5, 14),
+
+            new Vector2(3, 1), new Vector2(6, 1),
+            new Vector2(3, 1), new Vector2(4, 3),
+            new Vector2(3, 1), new Vector2(4, 4),
+            new Vector2(3, 11), new Vector2(4, 12),
+            new Vector2(3, 12), new Vector2(4, 12),
+            new Vector2(3, 12), new Vector2(7, 14),
+            new Vector2(3, 13), new Vector2(6, 12),
+            new Vector2(3, 13), new Vector2(5, 14),
+
+            new Vector2(4, 3), new Vector2(6, 1),
+            new Vector2(4, 3), new Vector2(5, 5),
+            new Vector2(4, 4), new Vector2(6, 2),
+            new Vector2(4, 4), new Vector2(5, 7),
+            new Vector2(4, 7), new Vector2(4, 4),
+            new Vector2(4, 7), new Vector2(5, 5),
+            new Vector2(4, 7), new Vector2(5, 7),
+            new Vector2(4, 7), new Vector2(7, 10),
+            new Vector2(4, 9), new Vector2(5, 7),
+            new Vector2(4, 9), new Vector2(6, 8),
+            new Vector2(4, 9), new Vector2(7, 10),
+            new Vector2(4, 12), new Vector2(8, 10),
+            new Vector2(4, 12), new Vector2(6, 12),
+
+            new Vector2(5, 5), new Vector2(6, 1),
+            new Vector2(5, 5), new Vector2(6, 2),
+            new Vector2(5, 5), new Vector2(7, 4),
+            new Vector2(5, 7), new Vector2(5, 5),
+            new Vector2(5, 7), new Vector2(7, 4),
+            new Vector2(5, 7), new Vector2(6, 8),
+            new Vector2(5, 14), new Vector2(6, 12),
+            new Vector2(5, 14), new Vector2(7, 13),
+
+            new Vector2(6, 1), new Vector2(10, 2),
+            new Vector2(6, 2), new Vector2(10, 2),
+            new Vector2(6, 2), new Vector2(7, 4),
+            new Vector2(6, 8), new Vector2(9, 9),
+            new Vector2(6, 8), new Vector2(7, 10),
+            new Vector2(6, 12), new Vector2(8, 10),
+            new Vector2(6, 12), new Vector2(10, 11),
+            new Vector2(6, 12), new Vector2(11, 13),
+            new Vector2(6, 12), new Vector2(7, 13),
+            new Vector2(6, 12), new Vector2(7, 14),
+
+            new Vector2(7, 1), new Vector2(9, 0),
+            new Vector2(7, 1), new Vector2(10, 2),
+            new Vector2(7, 4), new Vector2(9, 0),
+            new Vector2(7, 4), new Vector2(10, 2),
+            new Vector2(7, 4), new Vector2(11, 2),
+            new Vector2(7, 4), new Vector2(8, 5),
+            new Vector2(7, 10), new Vector2(8, 5),
+            new Vector2(7, 10), new Vector2(9, 5),
+            new Vector2(7, 10), new Vector2(10, 7),
+            new Vector2(7, 10), new Vector2(8, 7),
+            new Vector2(7, 13), new Vector2(10, 12),
+            new Vector2(7, 13), new Vector2(8, 14),
+            new Vector2(7, 14), new Vector2(10, 11),
+            new Vector2(7, 14), new Vector2(11, 11),
+            new Vector2(7, 14), new Vector2(12, 11),
+            new Vector2(7, 14), new Vector2(10, 12),
+            new Vector2(7, 14), new Vector2(11, 13),
+
+            new Vector2(8, 5), new Vector2(9, 0),
+            new Vector2(8, 5), new Vector2(10, 2),
+            new Vector2(8, 5), new Vector2(10, 3),
+            new Vector2(8, 5), new Vector2(9, 5),
+            new Vector2(8, 10), new Vector2(9, 9),
+            new Vector2(8, 10), new Vector2(10, 9),
+            new Vector2(8, 10), new Vector2(12, 11),
+            new Vector2(8, 10), new Vector2(10, 11),
+            new Vector2(8, 10), new Vector2(10, 11),
+            new Vector2(8, 14), new Vector2(10, 11),
+            new Vector2(8, 14), new Vector2(10, 12),
+            new Vector2(8, 14), new Vector2(14, 13),
+
+            new Vector2(9, 0), new Vector2(12, 1),
+            new Vector2(9, 0), new Vector2(11, 2),
+            new Vector2(9, 0), new Vector2(10, 2),
+            new Vector2(9, 0), new Vector2(10, 3),
+            new Vector2(9, 5), new Vector2(10, 2),
+            new Vector2(9, 5), new Vector2(11, 2),
+            new Vector2(9, 5), new Vector2(11, 4),
+            new Vector2(9, 5), new Vector2(11, 8),
+            new Vector2(9, 5), new Vector2(10, 7),
+            new Vector2(9, 5), new Vector2(10, 9),
+            new Vector2(9, 9), new Vector2(9, 5),
+            new Vector2(9, 9), new Vector2(10, 9),
+            new Vector2(9, 9), new Vector2(11, 11),
+            new Vector2(9, 9), new Vector2(10, 11),
+            new Vector2(9, 9), new Vector2(10, 7),
+
+            new Vector2(10, 2), new Vector2(11, 2),
+            new Vector2(10, 2), new Vector2(12, 1),
+            new Vector2(10, 3), new Vector2(11, 2),
+            new Vector2(10, 7), new Vector2(11, 4),
+            new Vector2(10, 7), new Vector2(11, 8),
+            new Vector2(10, 9), new Vector2(10, 7),
+            new Vector2(10, 9), new Vector2(11, 8),
+            new Vector2(10, 9), new Vector2(12, 11),
+            new Vector2(10, 9), new Vector2(11, 11),
+            new Vector2(10, 11), new Vector2(10, 9),
+            new Vector2(10, 11), new Vector2(13, 14),
+            new Vector2(10, 12), new Vector2(11, 11),
+            new Vector2(10, 12), new Vector2(12, 11),
+            new Vector2(10, 12), new Vector2(14, 13),
+
+            new Vector2(11, 2), new Vector2(12, 1),
+            new Vector2(11, 4), new Vector2(11, 2),
+            new Vector2(11, 4), new Vector2(12, 1),
+            new Vector2(11, 8), new Vector2(11, 4),
+            new Vector2(11, 11), new Vector2(13, 14),
+            new Vector2(11, 13), new Vector2(11, 11),
+            new Vector2(11, 13), new Vector2(12, 11),
+            new Vector2(11, 13), new Vector2(16, 11),
+            new Vector2(11, 13), new Vector2(14, 12),
+            new Vector2(11, 13), new Vector2(14, 13),
+
+            new Vector2(12, 1), new Vector2(17, 0),
+            new Vector2(12, 1), new Vector2(15, 1),
+            new Vector2(12, 1), new Vector2(16, 2),
+            new Vector2(12, 1), new Vector2(16, 3),
+            new Vector2(12, 1), new Vector2(15, 3),
+            new Vector2(12, 1), new Vector2(14, 5),
+            new Vector2(12, 1), new Vector2(14, 6),
+            new Vector2(12, 11), new Vector2(14, 12),
+            new Vector2(12, 11), new Vector2(14, 13),
+            new Vector2(12, 11), new Vector2(13, 14),
+
+            new Vector2(13, 14), new Vector2(14, 12),
+            new Vector2(13, 14), new Vector2(14, 13),
+            new Vector2(13, 14), new Vector2(15, 14),
+
+            new Vector2(14, 5), new Vector2(15, 3),
+            new Vector2(14, 5), new Vector2(16, 8),
+            new Vector2(14, 6), new Vector2(14,5),
+            new Vector2(14, 6), new Vector2(15, 3),
+            new Vector2(14, 6), new Vector2(16, 8),
+            new Vector2(14, 12), new Vector2(20, 11),
+            new Vector2(14, 12), new Vector2(17, 13),
+            new Vector2(14, 12), new Vector2(16, 13),
+            new Vector2(14, 12), new Vector2(17, 14),
+            new Vector2(14, 12), new Vector2(15, 14),
+            new Vector2(14, 13), new Vector2(15, 12),
+            new Vector2(14, 13), new Vector2(20, 14),
+            new Vector2(14, 13), new Vector2(17, 14),
+            new Vector2(14, 13), new Vector2(15, 14),
+
+            new Vector2(15, 1), new Vector2(17, 0),
+            new Vector2(15, 1), new Vector2(20, 1),
+            new Vector2(15, 1), new Vector2(19, 3),
+            new Vector2(15, 3), new Vector2(17, 0),
+            new Vector2(15, 3), new Vector2(20, 1),
+            new Vector2(15, 3), new Vector2(16, 3),
+            new Vector2(15, 12), new Vector2(16, 11),
+            new Vector2(15, 12), new Vector2(18, 11),
+            new Vector2(15, 12), new Vector2(17, 13),
+            new Vector2(15, 14), new Vector2(16, 13),
+            new Vector2(15, 14), new Vector2(17, 13),
+            new Vector2(15, 14), new Vector2(17, 14),
+
+            new Vector2(16, 2), new Vector2(17, 0),
+            new Vector2(16, 2), new Vector2(20, 1),
+            new Vector2(16, 2), new Vector2(19, 3),
+            new Vector2(16, 3), new Vector2(16, 2),
+            new Vector2(16, 3), new Vector2(19, 3),
+            new Vector2(16, 3), new Vector2(17, 0),
+            new Vector2(16, 3), new Vector2(20, 1),
+            new Vector2(16, 8), new Vector2(19, 7),
+            new Vector2(16, 11), new Vector2(18, 11),
+            new Vector2(16, 11), new Vector2(17, 13),
+            new Vector2(16, 11), new Vector2(17, 14),
+            new Vector2(16, 13), new Vector2(18, 11),
+            new Vector2(16, 13), new Vector2(20, 12),
+
+            new Vector2(17, 0), new Vector2(20, 1),
+            new Vector2(17, 0), new Vector2(19, 3),
+            new Vector2(17, 13), new Vector2(18, 11),
+            new Vector2(17, 13), new Vector2(20, 14),
+            new Vector2(17, 14), new Vector2(18, 11),
+            new Vector2(17, 14), new Vector2(20, 11),
+            new Vector2(17, 14), new Vector2(19, 13),
+
+            new Vector2(18, 11), new Vector2(20, 11),
+            new Vector2(18, 11), new Vector2(20, 12),
+            new Vector2(18, 11), new Vector2(20, 14),
+            new Vector2(18, 11), new Vector2(19, 13),
+
+            new Vector2(19, 3), new Vector2(20, 1),
+            new Vector2(19, 13), new Vector2(20, 11),
+            new Vector2(19, 13), new Vector2(20, 12),
+            new Vector2(19, 13), new Vector2(20, 14),
+
+    };
+    #endregion
+
     #endregion
 
 
@@ -34,6 +305,7 @@ public class InputHandler : MonoBehaviour
         {
             points[i] = new Point(0,0);
         }
+        
     }
 
     void Update()
@@ -41,20 +313,34 @@ public class InputHandler : MonoBehaviour
 
         if (isDrawing)
         {
+            // Get cursor position for the current frame
             Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // Ancor line to first point while drawing
             lineRenderer.SetPosition(0, firstObject.transform.position);
+            // Line tracks the cursor position
             lineRenderer.SetPosition(1, cursorPosition);
         }
         else
         {
             if (click && lineRenderer != null)
             {
+                // Draw Line between two points
                 lineRenderer.SetPosition(0, firstObject.transform.position);
                 lineRenderer.SetPosition(1, secondObject.transform.position);
+                
+                // Add First point of pathway drawn
+                pathwaysScenario1.Add(firstObject.transform.position);
+                // Add Second point of pathway drawn
+                pathwaysScenario1.Add(secondObject.transform.position);
+
+                foreach(Vector2 point in pathwaysScenario1)
+                {
+                    Debug.Log(point.x.ToString() + ", " + point.y.ToString());
+                }
+                
                 click = false;
             }
-
-        }
+        }        
     }
 
     private void OnClick()
@@ -76,16 +362,37 @@ public class InputHandler : MonoBehaviour
         {
             if (rayHit.collider.gameObject.tag == "Town")
             {
+                if (numberTownsMissed == 78)
+                {
+                    numberTownsMissed -= 2;
+                }
+                else
+                {
+                    numberTownsMissed -= 1;
+                }
                 secondObject = rayHit.collider.gameObject;
                 edgeCollider = newString.GetComponent<EdgeCollider2D>();
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
                 float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position)/3;
                 limeStringRemaining -= distance;
                 limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
+                
+                
+                Debug.Log("Number of invalid pathways = " + numberNullPathways);
+                Debug.Log("Number of Towns missed = " + numberTownsMissed);
+                double score = limeStringRemaining - (numberNullPathways * 20 + numberTownsMissed * 20);
+                Debug.Log("Score = " + numberNullPathways);
+
                 isDrawing = false;
                 click = true;
             }
+        }
 
+        if (rayHit.collider.gameObject.tag == "Finish")
+        {
+            Debug.Log("Number of invalid pathways = " + numberNullPathways);
+            Debug.Log("Number of Towns missed = " + numberNullPathways);
+            Debug.Log("Score = " + numberNullPathways);
         }
         
         Debug.Log(rayHit.collider.gameObject.name);
@@ -100,8 +407,6 @@ public class InputHandler : MonoBehaviour
             destroyedObject.GetComponent<LineRenderer>().positionCount = 0;
             EdgeCollider2D destroyedObjectEdgeCollider = destroyedObject.GetComponent<EdgeCollider2D>();
             destroyedObjectEdgeCollider.points = new Vector2[0];
-        }
-
-        
+        }        
     }
 }

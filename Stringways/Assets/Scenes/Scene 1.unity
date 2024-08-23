@@ -2938,10 +2938,11 @@ GameObject:
   - component: {fileID: 820135876}
   - component: {fileID: 820135875}
   - component: {fileID: 820135874}
-  - component: {fileID: 820135873}
+  - component: {fileID: 820135877}
+  - component: {fileID: 820135878}
   m_Layer: 5
   m_Name: Finish Button
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2967,18 +2968,6 @@ RectTransform:
   m_AnchoredPosition: {x: 723, y: -432.16}
   m_SizeDelta: {x: 989.562, y: 450.71}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &820135873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820135871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ba8ae59c0e7b641a195ac1941ac997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &820135874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3022,7 +3011,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 820135875}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1951864637}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &820135875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3061,6 +3062,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820135871}
   m_CullTransparentMesh: 1
+--- !u!114 &820135877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820135871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b66b52e93b2834a81aaf675d707035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &820135878
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820135871}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &842117506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6025,6 +6064,475 @@ MonoBehaviour:
   lineMaterial: {fileID: 0}
   lineWidth: 0.1
   limeMessageText: {fileID: 2140710851}
+  numberTownsVisited: 0
+  finishButton: {fileID: 820135874}
+  existingPathways:
+  - {x: 0, y: 0}
+  - {x: 6, y: 1}
+  - {x: 0, y: 0}
+  - {x: 1, y: 1}
+  - {x: 0, y: 0}
+  - {x: 1, y: 2}
+  - {x: 0, y: 0}
+  - {x: 1, y: 4}
+  - {x: 0, y: 0}
+  - {x: 0, y: 3}
+  - {x: 0, y: 3}
+  - {x: 1, y: 1}
+  - {x: 0, y: 4}
+  - {x: 2, y: 2}
+  - {x: 0, y: 4}
+  - {x: 2, y: 3}
+  - {x: 0, y: 4}
+  - {x: 2, y: 5}
+  - {x: 0, y: 4}
+  - {x: 0, y: 5}
+  - {x: 0, y: 5}
+  - {x: 4, y: 3}
+  - {x: 0, y: 5}
+  - {x: 2, y: 5}
+  - {x: 0, y: 5}
+  - {x: 1, y: 7}
+  - {x: 0, y: 8}
+  - {x: 1, y: 7}
+  - {x: 0, y: 8}
+  - {x: 4, y: 7}
+  - {x: 0, y: 8}
+  - {x: 2, y: 10}
+  - {x: 0, y: 9}
+  - {x: 1, y: 7}
+  - {x: 0, y: 9}
+  - {x: 5, y: 7}
+  - {x: 0, y: 9}
+  - {x: 4, y: 12}
+  - {x: 0, y: 9}
+  - {x: 3, y: 13}
+  - {x: 0, y: 9}
+  - {x: 2, y: 14}
+  - {x: 0, y: 9}
+  - {x: 1, y: 12}
+  - {x: 0, y: 13}
+  - {x: 2, y: 10}
+  - {x: 0, y: 13}
+  - {x: 1, y: 12}
+  - {x: 0, y: 13}
+  - {x: 3, y: 12}
+  - {x: 0, y: 13}
+  - {x: 4, y: 12}
+  - {x: 0, y: 13}
+  - {x: 2, y: 14}
+  - {x: 1, y: 1}
+  - {x: 1, y: 2}
+  - {x: 1, y: 1}
+  - {x: 3, y: 1}
+  - {x: 1, y: 1}
+  - {x: 2, y: 2}
+  - {x: 1, y: 1}
+  - {x: 2, y: 3}
+  - {x: 1, y: 2}
+  - {x: 2, y: 5}
+  - {x: 1, y: 4}
+  - {x: 2, y: 2}
+  - {x: 1, y: 7}
+  - {x: 2, y: 5}
+  - {x: 1, y: 7}
+  - {x: 4, y: 4}
+  - {x: 1, y: 7}
+  - {x: 4, y: 9}
+  - {x: 1, y: 7}
+  - {x: 2, y: 10}
+  - {x: 1, y: 12}
+  - {x: 2, y: 10}
+  - {x: 1, y: 12}
+  - {x: 3, y: 12}
+  - {x: 1, y: 12}
+  - {x: 3, y: 13}
+  - {x: 2, y: 2}
+  - {x: 3, y: 1}
+  - {x: 2, y: 3}
+  - {x: 2, y: 2}
+  - {x: 2, y: 3}
+  - {x: 3, y: 1}
+  - {x: 2, y: 3}
+  - {x: 4, y: 4}
+  - {x: 2, y: 5}
+  - {x: 2, y: 3}
+  - {x: 2, y: 5}
+  - {x: 3, y: 1}
+  - {x: 2, y: 5}
+  - {x: 4, y: 3}
+  - {x: 2, y: 5}
+  - {x: 4, y: 4}
+  - {x: 2, y: 5}
+  - {x: 5, y: 5}
+  - {x: 2, y: 5}
+  - {x: 4, y: 7}
+  - {x: 2, y: 10}
+  - {x: 4, y: 7}
+  - {x: 2, y: 10}
+  - {x: 4, y: 9}
+  - {x: 2, y: 10}
+  - {x: 3, y: 11}
+  - {x: 2, y: 10}
+  - {x: 3, y: 12}
+  - {x: 2, y: 10}
+  - {x: 3, y: 13}
+  - {x: 2, y: 14}
+  - {x: 2, y: 10}
+  - {x: 2, y: 14}
+  - {x: 3, y: 13}
+  - {x: 2, y: 14}
+  - {x: 6, y: 12}
+  - {x: 2, y: 14}
+  - {x: 5, y: 14}
+  - {x: 3, y: 1}
+  - {x: 6, y: 1}
+  - {x: 3, y: 1}
+  - {x: 4, y: 3}
+  - {x: 3, y: 1}
+  - {x: 4, y: 4}
+  - {x: 3, y: 11}
+  - {x: 4, y: 12}
+  - {x: 3, y: 12}
+  - {x: 4, y: 12}
+  - {x: 3, y: 12}
+  - {x: 7, y: 14}
+  - {x: 3, y: 13}
+  - {x: 6, y: 12}
+  - {x: 3, y: 13}
+  - {x: 5, y: 14}
+  - {x: 4, y: 3}
+  - {x: 6, y: 1}
+  - {x: 4, y: 3}
+  - {x: 5, y: 5}
+  - {x: 4, y: 4}
+  - {x: 6, y: 2}
+  - {x: 4, y: 4}
+  - {x: 5, y: 7}
+  - {x: 4, y: 7}
+  - {x: 4, y: 4}
+  - {x: 4, y: 7}
+  - {x: 5, y: 5}
+  - {x: 4, y: 7}
+  - {x: 5, y: 7}
+  - {x: 4, y: 7}
+  - {x: 7, y: 10}
+  - {x: 4, y: 9}
+  - {x: 5, y: 7}
+  - {x: 4, y: 9}
+  - {x: 6, y: 8}
+  - {x: 4, y: 9}
+  - {x: 7, y: 10}
+  - {x: 4, y: 12}
+  - {x: 8, y: 10}
+  - {x: 4, y: 12}
+  - {x: 6, y: 12}
+  - {x: 5, y: 5}
+  - {x: 6, y: 1}
+  - {x: 5, y: 5}
+  - {x: 6, y: 2}
+  - {x: 5, y: 5}
+  - {x: 7, y: 4}
+  - {x: 5, y: 7}
+  - {x: 5, y: 5}
+  - {x: 5, y: 7}
+  - {x: 7, y: 4}
+  - {x: 5, y: 7}
+  - {x: 6, y: 8}
+  - {x: 5, y: 14}
+  - {x: 6, y: 12}
+  - {x: 5, y: 14}
+  - {x: 7, y: 13}
+  - {x: 6, y: 1}
+  - {x: 10, y: 2}
+  - {x: 6, y: 2}
+  - {x: 10, y: 2}
+  - {x: 6, y: 2}
+  - {x: 7, y: 4}
+  - {x: 6, y: 8}
+  - {x: 9, y: 9}
+  - {x: 6, y: 8}
+  - {x: 7, y: 10}
+  - {x: 6, y: 12}
+  - {x: 8, y: 10}
+  - {x: 6, y: 12}
+  - {x: 10, y: 11}
+  - {x: 6, y: 12}
+  - {x: 11, y: 13}
+  - {x: 6, y: 12}
+  - {x: 7, y: 13}
+  - {x: 6, y: 12}
+  - {x: 7, y: 14}
+  - {x: 7, y: 1}
+  - {x: 9, y: 0}
+  - {x: 7, y: 1}
+  - {x: 10, y: 2}
+  - {x: 7, y: 4}
+  - {x: 9, y: 0}
+  - {x: 7, y: 4}
+  - {x: 10, y: 2}
+  - {x: 7, y: 4}
+  - {x: 11, y: 2}
+  - {x: 7, y: 4}
+  - {x: 8, y: 5}
+  - {x: 7, y: 10}
+  - {x: 8, y: 5}
+  - {x: 7, y: 10}
+  - {x: 9, y: 5}
+  - {x: 7, y: 10}
+  - {x: 10, y: 7}
+  - {x: 7, y: 10}
+  - {x: 8, y: 7}
+  - {x: 7, y: 13}
+  - {x: 10, y: 12}
+  - {x: 7, y: 13}
+  - {x: 8, y: 14}
+  - {x: 7, y: 14}
+  - {x: 10, y: 11}
+  - {x: 7, y: 14}
+  - {x: 11, y: 11}
+  - {x: 7, y: 14}
+  - {x: 12, y: 11}
+  - {x: 7, y: 14}
+  - {x: 10, y: 12}
+  - {x: 7, y: 14}
+  - {x: 11, y: 13}
+  - {x: 8, y: 5}
+  - {x: 9, y: 0}
+  - {x: 8, y: 5}
+  - {x: 10, y: 2}
+  - {x: 8, y: 5}
+  - {x: 10, y: 3}
+  - {x: 8, y: 5}
+  - {x: 9, y: 5}
+  - {x: 8, y: 10}
+  - {x: 9, y: 9}
+  - {x: 8, y: 10}
+  - {x: 10, y: 9}
+  - {x: 8, y: 10}
+  - {x: 12, y: 11}
+  - {x: 8, y: 10}
+  - {x: 10, y: 11}
+  - {x: 8, y: 10}
+  - {x: 10, y: 11}
+  - {x: 8, y: 14}
+  - {x: 10, y: 11}
+  - {x: 8, y: 14}
+  - {x: 10, y: 12}
+  - {x: 8, y: 14}
+  - {x: 14, y: 13}
+  - {x: 9, y: 0}
+  - {x: 12, y: 1}
+  - {x: 9, y: 0}
+  - {x: 11, y: 2}
+  - {x: 9, y: 0}
+  - {x: 10, y: 2}
+  - {x: 9, y: 0}
+  - {x: 10, y: 3}
+  - {x: 9, y: 5}
+  - {x: 10, y: 2}
+  - {x: 9, y: 5}
+  - {x: 11, y: 2}
+  - {x: 9, y: 5}
+  - {x: 11, y: 4}
+  - {x: 9, y: 5}
+  - {x: 11, y: 8}
+  - {x: 9, y: 5}
+  - {x: 10, y: 7}
+  - {x: 9, y: 5}
+  - {x: 10, y: 9}
+  - {x: 9, y: 9}
+  - {x: 9, y: 5}
+  - {x: 9, y: 9}
+  - {x: 10, y: 9}
+  - {x: 9, y: 9}
+  - {x: 11, y: 11}
+  - {x: 9, y: 9}
+  - {x: 10, y: 11}
+  - {x: 9, y: 9}
+  - {x: 10, y: 7}
+  - {x: 10, y: 2}
+  - {x: 11, y: 2}
+  - {x: 10, y: 2}
+  - {x: 12, y: 1}
+  - {x: 10, y: 3}
+  - {x: 11, y: 2}
+  - {x: 10, y: 7}
+  - {x: 11, y: 4}
+  - {x: 10, y: 7}
+  - {x: 11, y: 8}
+  - {x: 10, y: 9}
+  - {x: 10, y: 7}
+  - {x: 10, y: 9}
+  - {x: 11, y: 8}
+  - {x: 10, y: 9}
+  - {x: 12, y: 11}
+  - {x: 10, y: 9}
+  - {x: 11, y: 11}
+  - {x: 10, y: 11}
+  - {x: 10, y: 9}
+  - {x: 10, y: 11}
+  - {x: 13, y: 14}
+  - {x: 10, y: 12}
+  - {x: 11, y: 11}
+  - {x: 10, y: 12}
+  - {x: 12, y: 11}
+  - {x: 10, y: 12}
+  - {x: 14, y: 13}
+  - {x: 11, y: 2}
+  - {x: 12, y: 1}
+  - {x: 11, y: 4}
+  - {x: 11, y: 2}
+  - {x: 11, y: 4}
+  - {x: 12, y: 1}
+  - {x: 11, y: 8}
+  - {x: 11, y: 4}
+  - {x: 11, y: 11}
+  - {x: 13, y: 14}
+  - {x: 11, y: 13}
+  - {x: 11, y: 11}
+  - {x: 11, y: 13}
+  - {x: 12, y: 11}
+  - {x: 11, y: 13}
+  - {x: 16, y: 11}
+  - {x: 11, y: 13}
+  - {x: 14, y: 12}
+  - {x: 11, y: 13}
+  - {x: 14, y: 13}
+  - {x: 12, y: 1}
+  - {x: 17, y: 0}
+  - {x: 12, y: 1}
+  - {x: 15, y: 1}
+  - {x: 12, y: 1}
+  - {x: 16, y: 2}
+  - {x: 12, y: 1}
+  - {x: 16, y: 3}
+  - {x: 12, y: 1}
+  - {x: 15, y: 3}
+  - {x: 12, y: 1}
+  - {x: 14, y: 5}
+  - {x: 12, y: 1}
+  - {x: 14, y: 6}
+  - {x: 12, y: 11}
+  - {x: 14, y: 12}
+  - {x: 12, y: 11}
+  - {x: 14, y: 13}
+  - {x: 12, y: 11}
+  - {x: 13, y: 14}
+  - {x: 13, y: 14}
+  - {x: 14, y: 12}
+  - {x: 13, y: 14}
+  - {x: 14, y: 13}
+  - {x: 13, y: 14}
+  - {x: 15, y: 14}
+  - {x: 14, y: 5}
+  - {x: 15, y: 3}
+  - {x: 14, y: 5}
+  - {x: 16, y: 8}
+  - {x: 14, y: 6}
+  - {x: 14, y: 5}
+  - {x: 14, y: 6}
+  - {x: 15, y: 3}
+  - {x: 14, y: 6}
+  - {x: 16, y: 8}
+  - {x: 14, y: 12}
+  - {x: 20, y: 11}
+  - {x: 14, y: 12}
+  - {x: 17, y: 13}
+  - {x: 14, y: 12}
+  - {x: 16, y: 13}
+  - {x: 14, y: 12}
+  - {x: 17, y: 14}
+  - {x: 14, y: 12}
+  - {x: 15, y: 14}
+  - {x: 14, y: 13}
+  - {x: 15, y: 12}
+  - {x: 14, y: 13}
+  - {x: 20, y: 14}
+  - {x: 14, y: 13}
+  - {x: 17, y: 14}
+  - {x: 14, y: 13}
+  - {x: 15, y: 14}
+  - {x: 15, y: 1}
+  - {x: 17, y: 0}
+  - {x: 15, y: 1}
+  - {x: 20, y: 1}
+  - {x: 15, y: 1}
+  - {x: 19, y: 3}
+  - {x: 15, y: 3}
+  - {x: 17, y: 0}
+  - {x: 15, y: 3}
+  - {x: 20, y: 1}
+  - {x: 15, y: 3}
+  - {x: 16, y: 3}
+  - {x: 15, y: 12}
+  - {x: 16, y: 11}
+  - {x: 15, y: 12}
+  - {x: 18, y: 11}
+  - {x: 15, y: 12}
+  - {x: 17, y: 13}
+  - {x: 15, y: 14}
+  - {x: 16, y: 13}
+  - {x: 15, y: 14}
+  - {x: 17, y: 13}
+  - {x: 15, y: 14}
+  - {x: 17, y: 14}
+  - {x: 16, y: 2}
+  - {x: 17, y: 0}
+  - {x: 16, y: 2}
+  - {x: 20, y: 1}
+  - {x: 16, y: 2}
+  - {x: 19, y: 3}
+  - {x: 16, y: 3}
+  - {x: 16, y: 2}
+  - {x: 16, y: 3}
+  - {x: 19, y: 3}
+  - {x: 16, y: 3}
+  - {x: 17, y: 0}
+  - {x: 16, y: 3}
+  - {x: 20, y: 1}
+  - {x: 16, y: 8}
+  - {x: 19, y: 7}
+  - {x: 16, y: 11}
+  - {x: 18, y: 11}
+  - {x: 16, y: 11}
+  - {x: 17, y: 13}
+  - {x: 16, y: 11}
+  - {x: 17, y: 14}
+  - {x: 16, y: 13}
+  - {x: 18, y: 11}
+  - {x: 16, y: 13}
+  - {x: 20, y: 12}
+  - {x: 17, y: 0}
+  - {x: 20, y: 1}
+  - {x: 17, y: 0}
+  - {x: 19, y: 3}
+  - {x: 17, y: 13}
+  - {x: 18, y: 11}
+  - {x: 17, y: 13}
+  - {x: 20, y: 14}
+  - {x: 17, y: 14}
+  - {x: 18, y: 11}
+  - {x: 17, y: 14}
+  - {x: 20, y: 11}
+  - {x: 17, y: 14}
+  - {x: 19, y: 13}
+  - {x: 18, y: 11}
+  - {x: 20, y: 11}
+  - {x: 18, y: 11}
+  - {x: 20, y: 12}
+  - {x: 18, y: 11}
+  - {x: 20, y: 14}
+  - {x: 18, y: 11}
+  - {x: 19, y: 13}
+  - {x: 19, y: 3}
+  - {x: 20, y: 1}
+  - {x: 19, y: 13}
+  - {x: 20, y: 11}
+  - {x: 19, y: 13}
+  - {x: 20, y: 12}
+  - {x: 19, y: 13}
+  - {x: 20, y: 14}
 --- !u!114 &1951864640
 MonoBehaviour:
   m_ObjectHideFlags: 0
