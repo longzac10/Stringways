@@ -32,7 +32,7 @@ public class InputHandler : MonoBehaviour
 
     // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
     private List<Vector2> pathwaysScenario1 = new List<Vector2>();
-    
+
     // Vector2 array of all pairs of points representing all the existing pathways
     #region Existing Pathways
     public Vector2[] existingPathways = new Vector2[]
@@ -303,9 +303,9 @@ public class InputHandler : MonoBehaviour
         // Adding all points to the list
         for (int i = 0; i < 78; i++)
         {
-            points[i] = new Point(0,0);
+            points[i] = new Point(0, 0);
         }
-        
+
     }
 
     void Update()
@@ -327,20 +327,20 @@ public class InputHandler : MonoBehaviour
                 // Draw Line between two points
                 lineRenderer.SetPosition(0, firstObject.transform.position);
                 lineRenderer.SetPosition(1, secondObject.transform.position);
-                
+
                 // Add First point of pathway drawn
                 pathwaysScenario1.Add(firstObject.transform.position);
                 // Add Second point of pathway drawn
                 pathwaysScenario1.Add(secondObject.transform.position);
 
-                foreach(Vector2 point in pathwaysScenario1)
+                foreach (Vector2 point in pathwaysScenario1)
                 {
                     Debug.Log(point.x.ToString() + ", " + point.y.ToString());
                 }
-                
+
                 click = false;
             }
-        }        
+        }
     }
 
     private void OnClick()
@@ -348,11 +348,11 @@ public class InputHandler : MonoBehaviour
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
 
 
-        if (rayHit.collider.gameObject.tag == "Town" && isDrawing == false)
+        if (rayHit.collider != null && rayHit.collider.gameObject.tag == "Town" && isDrawing == false)
         {
-            
+
             isDrawing = true;
-            newString = Instantiate(newString, new Vector3(0, 0, 0), Quaternion.identity);         
+            newString = Instantiate(newString, new Vector3(0, 0, 0), Quaternion.identity);
             lineRenderer = newString.GetComponent<LineRenderer>();
             firstObject = rayHit.collider.gameObject;
             lineRenderer.positionCount = 2;
@@ -360,7 +360,7 @@ public class InputHandler : MonoBehaviour
         }
         else
         {
-            if (rayHit.collider.gameObject.tag == "Town")
+            if (rayHit.collider != null && rayHit.collider.gameObject.tag == "Town")
             {
                 if (numberTownsMissed == 78)
                 {
@@ -373,11 +373,11 @@ public class InputHandler : MonoBehaviour
                 secondObject = rayHit.collider.gameObject;
                 edgeCollider = newString.GetComponent<EdgeCollider2D>();
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
-                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position)/3;
+                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
                 limeStringRemaining -= distance;
                 limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
-                
-                
+
+
                 Debug.Log("Number of invalid pathways = " + numberNullPathways);
                 Debug.Log("Number of Towns missed = " + numberTownsMissed);
                 double score = limeStringRemaining - (numberNullPathways * 20 + numberTownsMissed * 20);
@@ -388,14 +388,18 @@ public class InputHandler : MonoBehaviour
             }
         }
 
-        if (rayHit.collider.gameObject.tag == "Finish")
+        if (rayHit.collider != null && rayHit.collider.gameObject.tag == "Finish")
         {
             Debug.Log("Number of invalid pathways = " + numberNullPathways);
             Debug.Log("Number of Towns missed = " + numberNullPathways);
             Debug.Log("Score = " + numberNullPathways);
         }
-        
-        Debug.Log(rayHit.collider.gameObject.name);
+
+        if (rayHit.collider != null)
+        {
+            Debug.Log(rayHit.collider.gameObject.name);
+        }
+
     }
 
     private void OnRightClick()
@@ -407,29 +411,44 @@ public class InputHandler : MonoBehaviour
             destroyedObject.GetComponent<LineRenderer>().positionCount = 0;
             EdgeCollider2D destroyedObjectEdgeCollider = destroyedObject.GetComponent<EdgeCollider2D>();
             destroyedObjectEdgeCollider.points = new Vector2[0];
-        }        
+        }
     }
 
     public void FinishBtnClick()
     {
+        Debug.Log("Pathways Drawn: ");
+        foreach (Vector2 point in pathwaysScenario1)
+        {
+            Debug.Log(point.x.ToString() + ", " + point.y.ToString());
+        }
+
+
         // Check if each of the pathways created is the same as an existing pathways
         // If not tally each missed pathway
         double score = limeStringRemaining;
-        if(pathwaysScenario1.Count > 1)
+        if (pathwaysScenario1.Count > 1)
         {
             int numberPathwaysMissed = 0;
-            for(int i=0; i < pathwaysScenario1.Count; i++)
+            for (int i = 0; i < pathwaysScenario1.Count; i += 2)
             {
-                bool pathwayMissed = true;                
-                foreach (Vector2 point in existingPathways)
+                bool pathwayMissed = true;
+
+                for (int j = 0; j < existingPathways.Length; j++)
                 {
-                    if(pathwaysScenario1[i].x == point.x && pathwaysScenario1[i].y == point.y)
+                    // Check if first point is equal
+                    if (pathwaysScenario1[i].x == existingPathways[j].x && pathwaysScenario1[i].y == existingPathways[j].y)
                     {
-                        pathwayMissed = false;                        
-                    }                    
+                        // Check if second point is equal, if so the pathway is valid
+                        if (pathwaysScenario1[i + 1].x == existingPathways[j + 1].x && pathwaysScenario1[i + 1].y == existingPathways[j + 1].y)
+                        {
+                            pathwayMissed = false;
+                        }
+                    }
                 }
-                if(pathwayMissed) { numberPathwaysMissed++; }
-            }            
+
+                if (pathwayMissed) { numberPathwaysMissed++; }
+            }
+            Debug.Log("Number of Pathways Missed: " + numberPathwaysMissed);
         }
         else
         {
