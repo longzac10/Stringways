@@ -409,4 +409,34 @@ public class InputHandler : MonoBehaviour
             destroyedObjectEdgeCollider.points = new Vector2[0];
         }        
     }
+
+    public void FinishBtnClick()
+    {
+        // Check if each of the pathways created is the same as an existing pathways
+        // If not tally each missed pathway
+        double score = limeStringRemaining;
+        if(pathwaysScenario1.Count > 1)
+        {
+            int numberPathwaysMissed = 0;
+            for(int i=0; i < pathwaysScenario1.Count; i++)
+            {
+                bool pathwayMissed = true;                
+                foreach (Vector2 point in existingPathways)
+                {
+                    if(pathwaysScenario1[i].x == point.x && pathwaysScenario1[i].y == point.y)
+                    {
+                        pathwayMissed = false;                        
+                    }                    
+                }
+                if(pathwayMissed) { numberPathwaysMissed++; }
+            }            
+        }
+        else
+        {
+            Debug.Log("No Pathways Created");
+        }
+
+        // Calculate Score
+        //score = score -()
+    }
 }
