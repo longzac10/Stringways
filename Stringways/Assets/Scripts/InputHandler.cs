@@ -332,12 +332,12 @@ public class InputHandler : MonoBehaviour
                 pathwaysScenario1.Add(firstObject.transform.position);
                 // Add Second point of pathway drawn
                 pathwaysScenario1.Add(secondObject.transform.position);
-
+                /*
                 foreach (Vector2 point in pathwaysScenario1)
                 {
                     Debug.Log(point.x.ToString() + ", " + point.y.ToString());
                 }
-
+                */
                 click = false;
             }
         }
@@ -378,28 +378,28 @@ public class InputHandler : MonoBehaviour
                 limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
 
 
-                Debug.Log("Number of invalid pathways = " + numberNullPathways);
-                Debug.Log("Number of Towns missed = " + numberTownsMissed);
+                //Debug.Log("Number of invalid pathways = " + numberNullPathways);
+                //Debug.Log("Number of Towns missed = " + numberTownsMissed);
                 double score = limeStringRemaining - (numberNullPathways * 20 + numberTownsMissed * 20);
-                Debug.Log("Score = " + numberNullPathways);
+                //Debug.Log("Score = " + numberNullPathways);
 
                 isDrawing = false;
                 click = true;
             }
         }
-
+        /*
         if (rayHit.collider != null && rayHit.collider.gameObject.tag == "Finish")
         {
             Debug.Log("Number of invalid pathways = " + numberNullPathways);
             Debug.Log("Number of Towns missed = " + numberNullPathways);
             Debug.Log("Score = " + numberNullPathways);
         }
-
+        
         if (rayHit.collider != null)
         {
             Debug.Log(rayHit.collider.gameObject.name);
         }
-
+        */
     }
 
     private void OnRightClick()
@@ -416,6 +416,7 @@ public class InputHandler : MonoBehaviour
 
     public void FinishBtnClick()
     {
+        
         Debug.Log("Pathways Drawn: ");
         foreach (Vector2 point in pathwaysScenario1)
         {
@@ -446,16 +447,19 @@ public class InputHandler : MonoBehaviour
                     }
                 }
 
-                if (pathwayMissed) { numberPathwaysMissed++; }
+                if (pathwayMissed) { numberNullPathways++; }
             }
-            Debug.Log("Number of Pathways Missed: " + numberPathwaysMissed);
+            Debug.Log("Number of Invalid Pathways: " + numberNullPathways);
         }
         else
         {
             Debug.Log("No Pathways Created");
         }
 
+        Debug.Log("Number of missed towns: " + numberTownsMissed);
+
         // Calculate Score
-        //score = score -()
+        score = score - numberTownsMissed * 20 - numberNullPathways * 20;
+        Debug.Log("Score: " + score);
     }
 }
