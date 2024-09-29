@@ -6,6 +6,7 @@ using System.Drawing;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class InputHandler : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class InputHandler : MonoBehaviour
     public Button finishButton;
     public static int numberTownsMissed = 78;
     public static int numberNullPathways = 0;
+    public static double totalScore = 0;
 
     // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
     private List<Vector2> pathwaysScenario1 = new List<Vector2>();
@@ -378,7 +380,7 @@ public class InputHandler : MonoBehaviour
                 float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
                 limeStringRemaining -= distance;
 
-                FinishBtnClick();
+                //FinishBtnClick();
                 limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
                 townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78-numberTownsMissed).ToString() + "/78");
                 invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways.ToString());
@@ -466,6 +468,10 @@ public class InputHandler : MonoBehaviour
 
         // Calculate Score
         score = score - numberTownsMissed * 20 - numberNullPathways * 20;
+        totalScore = score;
         Debug.Log("Score: " + score);
+
+        // Move to Score scene
+        SceneManager.LoadScene(3);
     }
 }
