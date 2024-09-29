@@ -24,11 +24,13 @@ public class InputHandler : MonoBehaviour
     private double limeStringRemaining = 900.0f;
     private double pinkStringRemaining = 900.0f;
     public TMP_Text limeMessageText;
+    public TMP_Text townsConnectedText;
+    public TMP_Text invalidPathwaysText;
     private Point[] points = new Point[78];
     public int numberTownsVisited = 0;
     public Button finishButton;
-    private int numberTownsMissed = 78;
-    private int numberNullPathways = 0;
+    public static int numberTownsMissed = 78;
+    public static int numberNullPathways = 0;
 
     // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
     private List<Vector2> pathwaysScenario1 = new List<Vector2>();
@@ -375,14 +377,17 @@ public class InputHandler : MonoBehaviour
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
                 float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
                 limeStringRemaining -= distance;
-                limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
 
+                FinishBtnClick();
+                limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
+                townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78-numberTownsMissed).ToString() + "/78");
+                invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways.ToString());
 
                 //Debug.Log("Number of invalid pathways = " + numberNullPathways);
                 //Debug.Log("Number of Towns missed = " + numberTownsMissed);
                 double score = limeStringRemaining - (numberNullPathways * 20 + numberTownsMissed * 20);
                 //Debug.Log("Score = " + numberNullPathways);
-
+                
                 isDrawing = false;
                 click = true;
             }
@@ -447,8 +452,9 @@ public class InputHandler : MonoBehaviour
                     }
                 }
 
-                if (pathwayMissed) { numberNullPathways++; }
+                if (pathwayMissed) {numberPathwaysMissed++;}
             }
+            numberNullPathways = numberPathwaysMissed;
             Debug.Log("Number of Invalid Pathways: " + numberNullPathways);
         }
         else
