@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System;
 
 public class InputHandler : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class InputHandler : MonoBehaviour
     public Button finishButton;
     public static int numberTownsMissed = 78;
     public static int numberNullPathways = 0;
-    public static double totalScore = 0;
+    public static int totalScore = 0;
 
     // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
     private List<Vector2> pathwaysScenario1 = new List<Vector2>();
@@ -317,6 +318,7 @@ public class InputHandler : MonoBehaviour
 
         if (isDrawing)
         {
+            lineRenderer.positionCount = 2;
             // Get cursor position for the current frame
             Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             // Ancor line to first point while drawing
@@ -468,10 +470,17 @@ public class InputHandler : MonoBehaviour
 
         // Calculate Score
         score = score - numberTownsMissed * 20 - numberNullPathways * 20;
-        totalScore = score;
+        totalScore = Convert.ToInt32(score);
+        if(totalScore < 0) { totalScore = 0; }
         Debug.Log("Score: " + score);
+        
 
         // Move to Score scene
         SceneManager.LoadScene(3);
+    }
+
+    public void undo()
+    {
+        lineRenderer.positionCount = 0;
     }
 }
