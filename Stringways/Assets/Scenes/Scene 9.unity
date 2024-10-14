@@ -12733,7 +12733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -14799,8 +14799,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Scenario 3: Alternate between blue and red\n you must follow the pre-existing
-    pathways"
+  m_text: "Scenario 4: \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af6438d8f4f76d4e8ef794df5ed1f18, type: 2}
   m_sharedMaterial: {fileID: -589708189840661163, guid: 9af6438d8f4f76d4e8ef794df5ed1f18, type: 2}
