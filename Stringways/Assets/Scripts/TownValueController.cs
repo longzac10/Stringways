@@ -12,4 +12,6 @@ public class TownValueController : MonoBehaviour
 
     // Towns y coordinate
     public int y;
+
+    public string colour;
 }

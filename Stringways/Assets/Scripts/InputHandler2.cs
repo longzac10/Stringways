@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System;
 
-public class InputHandler : MonoBehaviour
+public class InputHandler2 : MonoBehaviour
 {
     #region Variables
 
@@ -29,11 +29,12 @@ public class InputHandler : MonoBehaviour
     public TMP_Text townsConnectedText;
     public TMP_Text invalidPathwaysText;
     private Point[] points = new Point[78];
-    public int numberTownsVisited = 0;
+    public int numberTownsVisited2 = 0;
     public Button finishButton;
-    public static int numberTownsMissed = 78;
-    public static int numberNullPathways = 0;
-    public static int totalScore = 0;
+    public static int numberTownsMissed2 = 78;
+    public static int numberNullPathways2 = 0;
+    public static int totalScore2 = 0;
+    public static int totalRed = 0;
 
     // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
     private List<Vector2> pathwaysScenario1 = new List<Vector2>();
@@ -315,10 +316,12 @@ public class InputHandler : MonoBehaviour
         limeStringRemaining = 900.0f;
         pinkStringRemaining = 900.0f;
         points = new Point[78];
-        numberTownsVisited = 0;
-        numberTownsMissed = 78;
-        numberNullPathways = 0;
-        totalScore = 0;
+        numberTownsVisited2 = 0;
+        numberTownsMissed2 = 78;
+        numberNullPathways2 = 0;
+        totalRed = 0;
+
+        totalScore2 = 0;
     }
 
     void Update()
@@ -376,13 +379,13 @@ public class InputHandler : MonoBehaviour
         {
             if (rayHit.collider != null && rayHit.collider.gameObject.tag.Contains("Town"))
             {
-                if (numberTownsMissed == 78)
+                if (numberTownsMissed2 == 78)
                 {
-                    numberTownsMissed -= 2;
+                    numberTownsMissed2 -= 2;
                 }
                 else
                 {
-                    numberTownsMissed -= 1;
+                    numberTownsMissed2 -= 1;
                 }
                 secondObject = rayHit.collider.gameObject;
                 edgeCollider = newString.GetComponent<EdgeCollider2D>();
@@ -390,14 +393,25 @@ public class InputHandler : MonoBehaviour
                 float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
                 limeStringRemaining -= distance;
 
+                if(firstObject.tag == "TownRed") {
+                    Debug.Log("Red");
+                    totalRed++;
+                }
+
+                if (secondObject.tag == "TownRed")
+                {
+                    Debug.Log("Red");
+                    totalRed++;
+                }
+
                 //FinishBtnClick();
                 limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
-                townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78-numberTownsMissed).ToString() + "/78");
-                invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways.ToString());
+                townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78-numberTownsMissed2).ToString() + "/78");
+                invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways2.ToString());
 
                 //Debug.Log("Number of invalid pathways = " + numberNullPathways);
                 //Debug.Log("Number of Towns missed = " + numberTownsMissed);
-                double score = limeStringRemaining - (numberNullPathways * 20 + numberTownsMissed * 20);
+                double score = limeStringRemaining - (numberNullPathways2 * 20 + numberTownsMissed2 * 20);
                 //Debug.Log("Score = " + numberNullPathways);
                 
                 isDrawing = false;
@@ -431,7 +445,7 @@ public class InputHandler : MonoBehaviour
         }
     }
 
-    public void FinishBtnClick()
+    public void FinishBtnClick2()
     {
         
         Debug.Log("Pathways Drawn: ");
@@ -466,20 +480,20 @@ public class InputHandler : MonoBehaviour
 
                 if (pathwayMissed) {numberPathwaysMissed++;}
             }
-            numberNullPathways = numberPathwaysMissed;
-            Debug.Log("Number of Invalid Pathways: " + numberNullPathways);
+            numberNullPathways2 = numberPathwaysMissed;
+            Debug.Log("Number of Invalid Pathways: " + numberNullPathways2);
         }
         else
         {
             Debug.Log("No Pathways Created");
         }
 
-        Debug.Log("Number of missed towns: " + numberTownsMissed);
+        Debug.Log("Number of missed towns: " + numberTownsMissed2);
 
         // Calculate Score
-        score = score - numberTownsMissed * 20 - numberNullPathways * 20;
-        totalScore = Convert.ToInt32(score);
-        if(totalScore < 0) { totalScore = 0; }
+        score = score - numberTownsMissed2 * 20 - numberNullPathways2 * 20 - totalRed * 50;
+        totalScore2 = Convert.ToInt32(score);
+        if(totalScore2 < 0) { totalScore2 = 0; }
         Debug.Log("Score: " + score);
         
 
@@ -487,13 +501,13 @@ public class InputHandler : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
-    public void undo()
+    public void undo2()
     {
         float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
         limeStringRemaining += distance;
         lineRenderer.positionCount = 0;
-        numberTownsMissed += 1;
-        townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78 - numberTownsMissed).ToString() + "/78");
+        numberTownsMissed2 += 1;
+        townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78 - numberTownsMissed2).ToString() + "/78");
         limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
     }
 
