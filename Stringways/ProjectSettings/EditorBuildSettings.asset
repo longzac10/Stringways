@@ -12,21 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene 1.unity
     guid: 1e3e81293e04d234d9448a33602f99b6
   - enabled: 1
-    path: Assets/Scenes/Scene 2.unity
+    path: Assets/Scenes/S1_Info.unity
     guid: a379034b781b6e74382201d0a9aad688
   - enabled: 1
-    path: Assets/Scenes/Scene 3.unity
+    path: Assets/Scenes/ScoreSheet.unity
     guid: 934dfc2a979ebba4ab63c7c94e40557b
   - enabled: 1
-    path: Assets/Scenes/Scene 6.unity
+    path: Assets/Scenes/S2_Info.unity
     guid: f4780357a85d44d4fbb2a888ddd06592
   - enabled: 1
-    path: Assets/Scenes/Scene 5.unity
+    path: Assets/Scenes/Scene 2.unity
     guid: 2ca631a57df7ea74a80dad5df33cdaca
   - enabled: 1
-    path: Assets/Scenes/Scene 7.unity
+    path: Assets/Scenes/Scene 3.unity
     guid: 49fce7c3dff04704394648622948f41c
   - enabled: 1
-    path: Assets/Scenes/Scene 8.unity
+    path: Assets/Scenes/S3_Info.unity
     guid: 83b85c2f8a98d074cbe6212783b79316
   m_configObjects: {}

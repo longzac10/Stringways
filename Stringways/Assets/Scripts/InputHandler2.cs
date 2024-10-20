@@ -39,6 +39,10 @@ public class InputHandler2 : MonoBehaviour
     // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
     private List<Vector2> pathwaysScenario1 = new List<Vector2>();
 
+    // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
+    private List<Vector2> redTownsVisited = new List<Vector2>();
+
+
     // Vector2 array of all pairs of points representing all the existing pathways
     #region Existing Pathways
     public Vector2[] existingPathways = new Vector2[]
@@ -394,14 +398,22 @@ public class InputHandler2 : MonoBehaviour
                 limeStringRemaining -= distance;
 
                 if(firstObject.tag == "TownRed") {
-                    Debug.Log("Red");
-                    totalRed++;
+                    if(!redTownsVisited.Contains(firstObject.transform.position))
+                    {
+                        Debug.Log("Red");
+                        totalRed++;
+                        redTownsVisited.Add(firstObject.transform.position);
+                    }                   
                 }
 
                 if (secondObject.tag == "TownRed")
                 {
-                    Debug.Log("Red");
-                    totalRed++;
+                    if (!redTownsVisited.Contains(secondObject.transform.position))
+                    {
+                        Debug.Log("Red");
+                        totalRed++;
+                        redTownsVisited.Add(secondObject.transform.position);
+                    }
                 }
 
                 //FinishBtnClick();
