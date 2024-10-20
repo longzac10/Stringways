@@ -19,6 +19,8 @@ public class ScoreHandler : MonoBehaviour
     public TMP_Text s3total;
     public TMP_Text s350;
 
+  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,8 @@ public class ScoreHandler : MonoBehaviour
         s3mpath.SetText(InputHandler3.numberNullPathways3.ToString());
         s3total.SetText(InputHandler3.totalScore3.ToString());
         s350.SetText(InputHandler3.nonAlternating.ToString());
+
+        
 
     }
 }

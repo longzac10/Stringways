@@ -317,7 +317,8 @@ public class InputHandler2 : MonoBehaviour
         }
 
         lineWidth = 0.1f; // Width of the line
-        limeStringRemaining = 900.0f;
+        limeStringRemaining = InputHandler.limeStringRemaining;
+        limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
         pinkStringRemaining = 900.0f;
         points = new Point[78];
         numberTownsVisited2 = 0;
