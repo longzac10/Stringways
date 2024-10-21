@@ -24,6 +24,10 @@ public class ScoreHandler2 : MonoBehaviour
         //s3total.SetText(InputHandler7.totalScore7.ToString());
         s750.SetText(InputHandler7.nonGreen.ToString());
 
+        //s9mpath.SetText(InputHandler9.numberNullPathways7.ToString());
+        //s3total.SetText(InputHandler7.totalScore7.ToString());
+        s950.SetText(InputHandler9.total50.ToString());
+
     }
 }
 

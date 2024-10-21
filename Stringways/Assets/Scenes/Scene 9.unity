@@ -7669,8 +7669,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Penalties: -20 Points for every non pre-existing black pathway. \n-50
-    Points for not start/finish at the Capital city"
+  m_text: 'Penalties: -50 Points for each blue town missed
+
+    -50 Points for not
+    start/finish at the Capital city'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af6438d8f4f76d4e8ef794df5ed1f18, type: 2}
   m_sharedMaterial: {fileID: -589708189840661163, guid: 9af6438d8f4f76d4e8ef794df5ed1f18, type: 2}
@@ -14843,10 +14845,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Scenario 7: Connect all towns
+  m_text: 'Scenario 9: Start and finish at the capital city
 
-    Start and finish at the green capital
-    city'
+    Including all blue
+    tonws
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af6438d8f4f76d4e8ef794df5ed1f18, type: 2}
   m_sharedMaterial: {fileID: -589708189840661163, guid: 9af6438d8f4f76d4e8ef794df5ed1f18, type: 2}
@@ -16868,7 +16872,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1951864637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e89526565297cdc4b8b19e30d458420b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a6d544927fd13d4b9f85f6d56024377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newString: {fileID: 3464213934811003258, guid: ac5ba2af13524e34896b6576bd8440e1, type: 3}
@@ -16877,7 +16881,7 @@ MonoBehaviour:
   limeMessageText: {fileID: 2140710851}
   townsConnectedText: {fileID: 1779775670}
   invalidPathwaysText: {fileID: 1178733530}
-  numberTownsVisited7: 0
+  numberTownsVisited9: 0
   finishButton: {fileID: 1823875992}
   existingPathways:
   - {x: 0, y: 0}

@@ -8000,7 +8000,8 @@ MonoBehaviour:
     -20 Points for
     every non pre-existing black pathway.
 
-    -50 Points for any non-blue/red alternating'
+    -50 Points each time different colour
+    strings cross'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af6438d8f4f76d4e8ef794df5ed1f18, type: 2}
   m_sharedMaterial: {fileID: -589708189840661163, guid: 9af6438d8f4f76d4e8ef794df5ed1f18, type: 2}
