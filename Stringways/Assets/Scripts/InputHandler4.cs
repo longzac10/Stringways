@@ -17,7 +17,8 @@ public class InputHandler4 : MonoBehaviour
     private LineRenderer lineRenderer;
     private GameObject firstObject;
     private GameObject secondObject;
-    public GameObject newString;
+    public GameObject limeString;
+    public GameObject pinkString;
     public Material lineMaterial; // Material for the line
     private EdgeCollider2D edgeCollider;
     public float lineWidth = 0.1f; // Width of the line
@@ -31,6 +32,9 @@ public class InputHandler4 : MonoBehaviour
     private Point[] points = new Point[78];
     public int numberTownsVisited4 = 0;
     public Button finishButton;
+    public Button selectLimeString;
+    public Button selectPinkString;
+    private String currentStringColour = "lime";
     public static int numberTownsMissed4 = 78;
     public static int numberNullPathways4 = 0;
     public static int totalScore3 = 0;
@@ -373,8 +377,17 @@ public class InputHandler4 : MonoBehaviour
         {
 
             isDrawing = true;
-            newString = Instantiate(newString, new Vector3(0, 0, 0), Quaternion.identity);
-            lineRenderer = newString.GetComponent<LineRenderer>();
+            limeString = Instantiate(limeString, new Vector3(0, 0, 0), Quaternion.identity);
+            pinkString = Instantiate(pinkString, new Vector3(0, 0, 0), Quaternion.identity);
+            if(currentStringColour.Equals("pink"))
+            {
+                lineRenderer = pinkString.GetComponent<LineRenderer>();
+            }
+            else
+            {
+                lineRenderer = limeString.GetComponent<LineRenderer>();
+            }
+            
             firstObject = rayHit.collider.gameObject;
             lineRenderer.positionCount = 2;
 
@@ -392,7 +405,7 @@ public class InputHandler4 : MonoBehaviour
                     numberTownsMissed4 -= 1;
                 }
                 secondObject = rayHit.collider.gameObject;
-                edgeCollider = newString.GetComponent<EdgeCollider2D>();
+                edgeCollider = limeString.GetComponent<EdgeCollider2D>();
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
                 float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
                 limeStringRemaining -= distance;
@@ -538,6 +551,16 @@ public class InputHandler4 : MonoBehaviour
 
         // Move to Score scene
         SceneManager.LoadScene(3);
+    }
+
+    public void selectLimeButtonClick()
+    {
+        currentStringColour = "lime";
+    }
+
+    public void selectPinkButtonClick()
+    {
+        currentStringColour = "pink";
     }
 
     public void undo2()

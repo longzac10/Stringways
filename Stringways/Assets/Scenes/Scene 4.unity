@@ -3278,17 +3278,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9049351821729256557, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
   m_PrefabInstance: {fileID: 794749247}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &481360314 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9049351821729256556, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
-  m_PrefabInstance: {fileID: 794749247}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd9283a69a438fd4eb93c0aef98a007f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &485181055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6319,23 +6308,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1912856789}
+      objectReference: {fileID: 1951864641}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MovetoScene
+      value: selectLimeButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChangeScene, Assembly-CSharp
+      value: InputHandler4, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -6823,23 +6812,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 481360314}
+      objectReference: {fileID: 1951864641}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MovetoScene
+      value: selectPinkButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChangeScene, Assembly-CSharp
+      value: InputHandler4, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -16120,17 +16109,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
---- !u!114 &1823875992 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
-  m_PrefabInstance: {fileID: 1823875991}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1852904167
 GameObject:
   m_ObjectHideFlags: 0
@@ -16686,17 +16664,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9049351821729256557, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
   m_PrefabInstance: {fileID: 764317293}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1912856789 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9049351821729256556, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
-  m_PrefabInstance: {fileID: 764317293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd9283a69a438fd4eb93c0aef98a007f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1928709965 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9049351821729256557, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
@@ -17215,17 +17182,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1951864637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0532387052ba748bea0e60b36387c7, type: 3}
+  m_Script: {fileID: 11500000, guid: d83c1baa2a8d1c145b33ad7509ae4146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newString: {fileID: 3464213934811003258, guid: ac5ba2af13524e34896b6576bd8440e1, type: 3}
+  limeString: {fileID: 3464213934811003258, guid: ac5ba2af13524e34896b6576bd8440e1, type: 3}
+  pinkString: {fileID: 3464213934811003258, guid: ca29ae2a1c4a7e9429fffb194c31d978, type: 3}
   lineMaterial: {fileID: 0}
   lineWidth: 0.1
-  limeMessageText: {fileID: 2140710851}
-  townsConnectedText: {fileID: 1779775670}
-  invalidPathwaysText: {fileID: 1178733530}
-  numberTownsVisited3: 0
-  finishButton: {fileID: 1823875992}
+  limeMessageText: {fileID: 0}
+  townsConnectedText: {fileID: 0}
+  invalidPathwaysText: {fileID: 0}
+  numberTownsVisited4: 0
+  finishButton: {fileID: 0}
+  selectLimeString: {fileID: 0}
+  selectPinkString: {fileID: 0}
   existingPathways:
   - {x: 0, y: 0}
   - {x: 6, y: 1}
