@@ -18,22 +18,18 @@ public class InputHandler : MonoBehaviour
     private GameObject firstObject;
     private GameObject secondObject;
     public GameObject newString;
-    public Material lineMaterial; // Material for the line
     private EdgeCollider2D edgeCollider;
-    public float lineWidth = 0.1f; // Width of the line
     private bool isDrawing = false;
     private bool click = false;
-    public static double limeStringRemaining = 900.0f;
-    private double pinkStringRemaining = 900.0f;
+    public static double limeStringRemaining;
     public TMP_Text limeMessageText;
     public TMP_Text townsConnectedText;
     public TMP_Text invalidPathwaysText;
-    private Point[] points = new Point[78];
-    public int numberTownsVisited = 0;
+    public int numberTownsVisited;
     public Button finishButton;
-    public static int numberTownsMissed = 78;
-    public static int numberNullPathways = 0;
-    public static int totalScore = 0;
+    public static int numberTownsMissed;
+    public static int numberNullPathways;
+    public static int totalScore;
 
     // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
     private List<Vector2> pathwaysScenario1 = new List<Vector2>();
@@ -305,16 +301,7 @@ public class InputHandler : MonoBehaviour
     {
         _mainCamera = Camera.main;
 
-        // Adding all points to the list
-        for (int i = 0; i < 78; i++)
-        {
-            points[i] = new Point(0, 0);
-        }
-
-        lineWidth = 0.1f; // Width of the line
-        limeStringRemaining = 900.0f;
-        pinkStringRemaining = 900.0f;
-        points = new Point[78];
+        limeStringRemaining = 900.0f;      
         numberTownsVisited = 0;
         numberTownsMissed = 78;
         numberNullPathways = 0;
@@ -346,12 +333,7 @@ public class InputHandler : MonoBehaviour
                 pathwaysScenario1.Add(firstObject.transform.position);
                 // Add Second point of pathway drawn
                 pathwaysScenario1.Add(secondObject.transform.position);
-                /*
-                foreach (Vector2 point in pathwaysScenario1)
-                {
-                    Debug.Log(point.x.ToString() + ", " + point.y.ToString());
-                }
-                */
+                
                 click = false;
             }
         }
@@ -361,7 +343,7 @@ public class InputHandler : MonoBehaviour
     {
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
 
-
+        // If the player clicks on a town, initiate drawing mode and ancor the first point
         if (rayHit.collider != null && rayHit.collider.gameObject.tag.Contains("Town") && isDrawing == false)
         {
 
@@ -372,6 +354,7 @@ public class InputHandler : MonoBehaviour
             lineRenderer.positionCount = 2;
 
         }
+        // If the player clicks on a second town while drawing, draw a pathway between the two points
         else
         {
             if (rayHit.collider != null && rayHit.collider.gameObject.tag.Contains("Town"))
@@ -395,28 +378,13 @@ public class InputHandler : MonoBehaviour
                 townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78-numberTownsMissed).ToString() + "/78");
                 invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways.ToString());
 
-                //Debug.Log("Number of invalid pathways = " + numberNullPathways);
-                //Debug.Log("Number of Towns missed = " + numberTownsMissed);
                 double score = limeStringRemaining - (numberNullPathways * 20 + numberTownsMissed * 20);
-                //Debug.Log("Score = " + numberNullPathways);
                 
                 isDrawing = false;
                 click = true;
             }
         }
-        /*
-        if (rayHit.collider != null && rayHit.collider.gameObject.tag == "Finish")
-        {
-            Debug.Log("Number of invalid pathways = " + numberNullPathways);
-            Debug.Log("Number of Towns missed = " + numberNullPathways);
-            Debug.Log("Score = " + numberNullPathways);
-        }
-        
-        if (rayHit.collider != null)
-        {
-            Debug.Log(rayHit.collider.gameObject.name);
-        }
-        */
+
     }
 
     private void OnRightClick()
@@ -519,6 +487,7 @@ public class InputHandler : MonoBehaviour
         }
     }
 
+    // Undo method removes the last placed pathway, gets it distance and add the value back to total string length left
     public void undo()
     {
         float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
