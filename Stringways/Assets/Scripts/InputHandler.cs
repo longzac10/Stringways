@@ -22,6 +22,7 @@ public class InputHandler : MonoBehaviour
     private bool isDrawing = false;
     private bool click = false;
     public static double limeStringRemaining;
+    public static double pinkStringRemaining = 900.0f;
     public TMP_Text limeMessageText;
     public TMP_Text townsConnectedText;
     public TMP_Text invalidPathwaysText;

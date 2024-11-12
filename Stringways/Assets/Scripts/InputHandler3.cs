@@ -23,7 +23,7 @@ public class InputHandler3 : MonoBehaviour
     public float lineWidth = 0.1f; // Width of the line
     private bool isDrawing = false;
     private bool click = false;
-    private double limeStringRemaining = 900.0f;
+    public static double limeStringRemaining = 900.0f;
     private double pinkStringRemaining = 900.0f;
     public TMP_Text limeMessageText;
     public TMP_Text townsConnectedText;

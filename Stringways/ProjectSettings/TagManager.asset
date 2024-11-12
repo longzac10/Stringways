@@ -9,6 +9,8 @@ TagManager:
   - TownRed
   - TownBlue
   - TownGreen
+  - pink
+  - lime
   layers:
   - Default
   - TransparentFX

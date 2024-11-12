@@ -329,7 +329,7 @@ public class InputHandler4 : MonoBehaviour
         }
 
         lineWidth = 0.1f; // Width of the line
-        limeStringRemaining = 900.0f;
+        limeStringRemaining = InputHandler3.limeStringRemaining;
         pinkStringRemaining = 900.0f;
         points = new Point[78];
         numberTownsVisited4 = 0;
@@ -416,8 +416,18 @@ public class InputHandler4 : MonoBehaviour
                 {
                     numberTownsMissed4 -= 1;
                 }
+
                 secondObject = rayHit.collider.gameObject;
-                edgeCollider = limeString.GetComponent<EdgeCollider2D>();
+                if (currentStringColour.Equals("lime"))
+                {
+                    edgeCollider = limeString.GetComponent<EdgeCollider2D>();
+                }
+                else
+                {
+                    edgeCollider = pinkString.GetComponent<EdgeCollider2D>();
+                }
+                
+                
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
                 float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
                 
@@ -432,8 +442,7 @@ public class InputHandler4 : MonoBehaviour
                     pinkMessageText.SetText("Pink string remaining: " + "\n" + pinkStringRemaining.ToString("0.00") + "cm");
                 }
 
-                numberMultiColourCross = CountIntersectionsBetweenTaggedLines();
-                Debug.Log(numberMultiColourCross);
+                
 
                 /* Check if this new pathway crosses another with a differnt coloure1.IsTouching(e2)
                 if (listStrings.Count != 0)
@@ -458,25 +467,34 @@ public class InputHandler4 : MonoBehaviour
                 if (currentStringColour.Equals("pink"))
                 {
                     listStrings.Add(pinkString);
+                    Debug.Log("Added pink");
+
                 }
                 else
                 {
                     listStrings.Add(limeString);
+                    Debug.Log("Added lime");
                 }
+                Debug.Log("size of listStrings = " + listStrings.Count);
 
+                numberMultiColourCross = CountIntersectionsBetweenTaggedLines();
+                Debug.Log(numberMultiColourCross);
+                
+                /*
                 foreach (GameObject stringObject in listStrings)
                 {
                     Debug.Log(stringObject.tag);
                 }
+                */
 
                 //FinishBtnClick();
-                
+
                 townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78-numberTownsMissed4).ToString() + "/78");
                 invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways4.ToString());
 
                 //Debug.Log("Number of invalid pathways = " + numberNullPathways);
                 //Debug.Log("Number of Towns missed = " + numberTownsMissed);
-                double score = limeStringRemaining - (numberNullPathways4 * 20 + numberTownsMissed4 * 20);
+                //double score = limeStringRemaining - (numberNullPathways4 * 20 + numberTownsMissed4 * 20);
                 //Debug.Log("Score = " + numberNullPathways);
                 
                 isDrawing = false;
@@ -490,16 +508,27 @@ public class InputHandler4 : MonoBehaviour
     {
         int intersectionCount = 0;
 
-        for (int i = 0; i < listLineRenderers.Count; i++)
+        for (int i = 0; i < listStrings.Count; i++)
         {
-            for (int j = i + 1; j < listLineRenderers.Count; j++)
+            Debug.Log("i");
+            for (int j = i + 1; j < listStrings.Count; j++)
             {
-                LineRenderer line1 = listLineRenderers[i];
-                LineRenderer line2 = listLineRenderers[j];
+                Debug.Log("j");
+                //LineRenderer line1 = listLineRenderers[i];
+                GameObject line1Object = listStrings[i];
+                LineRenderer line1 = line1Object.GetComponent<LineRenderer>();
+                Debug.Log("Line1 colour: " + line1Object.tag);
+                
+
+                //LineRenderer line2 = listLineRenderers[j];
+                GameObject line2Object = listStrings[j];
+                Debug.Log("Line2 colour: " + line2Object.tag);
+                LineRenderer line2 = line2Object.GetComponent<LineRenderer>();
+
 
                 // Only check intersections between lines with different tags
-                if ((line1.tag == "lime" && line2.tag == "pink") ||
-                    (line1.tag == "pink" && line2.tag == "lime"))
+                if ((line1Object.tag == "lime" && line2Object.tag == "pink") ||
+                    (line1Object.tag == "pink" && line2Object.tag == "lime"))
                 {
                     if (DoLinesIntersect(line1, line2))
                     {
@@ -595,12 +624,11 @@ public class InputHandler4 : MonoBehaviour
         Debug.Log("Number of missed towns: " + numberTownsMissed4);
 
         // Calculate Score
-        score = score - numberTownsMissed4 * 20 - numberNullPathways4 * 20 - numberMultiColourCross * 50;
+        score = (limeStringRemaining + pinkStringRemaining) - numberTownsMissed4 * 20 - numberNullPathways4 * 20 - numberMultiColourCross * 50;
         totalScore4 = Convert.ToInt32(score);
         if(totalScore4 < 0) { totalScore4 = 0; }
         Debug.Log("Score: " + score);
         
-
         // Move to Score scene
         SceneManager.LoadScene(3);
     }

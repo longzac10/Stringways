@@ -391,7 +391,7 @@ public class InputHandler9 : MonoBehaviour
             {
                 if (numberTownsMissed9 == 78)
                 {
-                    //
+                    // Decrease nonGreen count if the first town is green
                     if (firstObject.tag == "TownGreen")
                     {
                         startGreen = 0;

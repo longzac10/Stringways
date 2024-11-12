@@ -3387,6 +3387,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9283a69a438fd4eb93c0aef98a007f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &492310510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
+  m_PrefabInstance: {fileID: 1823875991}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &496733407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4836,7 +4847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 723, y: 262}
+  m_AnchoredPosition: {x: 722.9995, y: 261.99994}
   m_SizeDelta: {x: 146.6174, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &694251232
@@ -6848,11 +6859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821822939009, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.7877302
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821822939009, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 0.5415094
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821822939009, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_fontColor.r
@@ -6864,7 +6875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821822939009, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4291363071
+      value: 4294937343
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
@@ -16659,11 +16670,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906539708}
   m_CullTransparentMesh: 1
+--- !u!114 &1912429516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
+  m_PrefabInstance: {fileID: 794749247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1912856788 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9049351821729256557, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
   m_PrefabInstance: {fileID: 764317293}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1912856790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
+  m_PrefabInstance: {fileID: 764317293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1928709965 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9049351821729256557, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
@@ -17189,13 +17222,14 @@ MonoBehaviour:
   pinkString: {fileID: 3464213934811003258, guid: ca29ae2a1c4a7e9429fffb194c31d978, type: 3}
   lineMaterial: {fileID: 0}
   lineWidth: 0.1
-  limeMessageText: {fileID: 0}
-  townsConnectedText: {fileID: 0}
-  invalidPathwaysText: {fileID: 0}
+  limeMessageText: {fileID: 2140710851}
+  pinkMessageText: {fileID: 694251232}
+  townsConnectedText: {fileID: 1779775670}
+  invalidPathwaysText: {fileID: 1178733530}
   numberTownsVisited4: 0
-  finishButton: {fileID: 0}
-  selectLimeString: {fileID: 0}
-  selectPinkString: {fileID: 0}
+  finishButton: {fileID: 492310510}
+  selectLimeString: {fileID: 1912856790}
+  selectPinkString: {fileID: 1912429516}
   existingPathways:
   - {x: 0, y: 0}
   - {x: 6, y: 1}
