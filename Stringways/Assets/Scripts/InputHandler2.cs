@@ -382,7 +382,7 @@ public class InputHandler2 : MonoBehaviour
                 secondObject = rayHit.collider.gameObject;
                 edgeCollider = newString.GetComponent<EdgeCollider2D>();
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
-                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
+                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 2;
                 limeStringRemaining2 -= distance;
 
                 if(firstObject.tag == "TownRed") {
@@ -491,7 +491,7 @@ public class InputHandler2 : MonoBehaviour
         Debug.Log("Number of missed towns: " + numberTownsMissed2);
 
         // Calculate Score
-        score = score - numberTownsMissed2 * 20 - numberNullPathways2 * 20 - totalRed * 50;
+        score = (limeStringRemaining2 + 900.0f) - numberTownsMissed2 * 20 - numberNullPathways2 * 20 - totalRed * 50;
         totalScore2 = Convert.ToInt32(score);
         if(totalScore2 < 0) { totalScore2 = 0; }
         Debug.Log("Score: " + score);

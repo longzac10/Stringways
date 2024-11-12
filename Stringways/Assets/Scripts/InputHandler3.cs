@@ -532,7 +532,7 @@ public class InputHandler3 : MonoBehaviour
         Debug.Log("Number of missed towns: " + numberTownsMissed3);
 
         // Calculate Score
-        score = score - numberTownsMissed3 * 20 - numberNullPathways3 * 20 - nonAlternating * 50;
+        score = (limeStringRemaining3 + 900.0f) - numberTownsMissed3 * 20 - numberNullPathways3 * 20 - nonAlternating * 50;
         totalScore3 = Convert.ToInt32(score);
         if(totalScore3 < 0) { totalScore3 = 0; }
         Debug.Log("Score: " + score);
@@ -544,7 +544,7 @@ public class InputHandler3 : MonoBehaviour
 
     public void undo2()
     {
-        float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
+        float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 2;
         limeStringRemaining3 += distance;
         lineRenderer.positionCount = 0;
         numberTownsMissed3 += 1;

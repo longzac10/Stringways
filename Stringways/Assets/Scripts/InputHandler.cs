@@ -373,7 +373,7 @@ public class InputHandler : MonoBehaviour
                 secondObject = rayHit.collider.gameObject;
                 edgeCollider = newString.GetComponent<EdgeCollider2D>();
                 edgeCollider.points = new Vector2[] { firstObject.transform.position, secondObject.transform.position };
-                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
+                float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 2;
                 limeStringRemaining -= distance;
 
                 checkInvalidPathways();
@@ -448,7 +448,7 @@ public class InputHandler : MonoBehaviour
         Debug.Log("Number of missed towns: " + numberTownsMissed);
 
         // Calculate Score
-        score = score - numberTownsMissed * 20 - numberNullPathways * 20;
+        score = (limeStringRemaining + 900.0f) - numberTownsMissed * 20 - numberNullPathways * 20;
         totalScore = Convert.ToInt32(score);
         if(totalScore < 0) { totalScore = 0; }
         Debug.Log("Score: " + score);

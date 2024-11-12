@@ -58,13 +58,13 @@ public class ScoreHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        s1String.SetText(InputHandler.limeStringRemaining.ToString("0"));
+        s1String.SetText((InputHandler.limeStringRemaining + 900.0f).ToString("0"));
         s1mtown.SetText(InputHandler.numberTownsMissed.ToString());
         s1mpath.SetText(InputHandler.numberNullPathways.ToString());
         s1B.SetText(((InputHandler.numberTownsMissed + InputHandler.numberNullPathways) * 20).ToString("0"));
         s1total.SetText(InputHandler.totalScore.ToString());
 
-        s2String.SetText(InputHandler2.limeStringRemaining2.ToString("0"));
+        s2String.SetText((InputHandler2.limeStringRemaining2 + 900.0f).ToString("0"));
         s2mtown.SetText(InputHandler2.numberTownsMissed2.ToString());
         s2mpath.SetText(InputHandler2.numberNullPathways2.ToString());
         s2B.SetText(((InputHandler2.numberTownsMissed2 + InputHandler2.numberNullPathways2) * 20).ToString("0"));
@@ -72,7 +72,7 @@ public class ScoreHandler : MonoBehaviour
         s2C.SetText(((InputHandler2.totalRed) * 50).ToString());
         s2total.SetText(InputHandler2.totalScore2.ToString());
 
-        s3String.SetText(InputHandler3.limeStringRemaining3.ToString("0"));
+        s3String.SetText((InputHandler3.limeStringRemaining3 + 900.0f).ToString("0"));
         s3mtown.SetText(InputHandler3.numberTownsMissed3.ToString());
         s3mpath.SetText(InputHandler3.numberNullPathways3.ToString());
         s3B.SetText(((InputHandler3.numberTownsMissed3 + InputHandler3.numberNullPathways3) * 20).ToString("0"));
@@ -80,7 +80,7 @@ public class ScoreHandler : MonoBehaviour
         s3C.SetText(((InputHandler3.nonAlternating) * 50).ToString());
         s3total.SetText(InputHandler3.totalScore3.ToString());
 
-        s4String.SetText(InputHandler4.limeStringRemaining4.ToString("0"));
+        s4String.SetText((InputHandler4.limeStringRemaining4 + InputHandler4.pinkStringRemaining4).ToString("0"));
         s4mtown.SetText(InputHandler4.numberTownsMissed4.ToString());
         s4mpath.SetText(InputHandler4.numberNullPathways4.ToString());
         s4B.SetText(((InputHandler4.numberTownsMissed4 + InputHandler4.numberNullPathways4) * 20).ToString("0"));
