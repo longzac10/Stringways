@@ -24,8 +24,8 @@ public class InputHandler4 : MonoBehaviour
     public float lineWidth = 0.1f; // Width of the line
     private bool isDrawing = false;
     private bool click = false;
-    private double limeStringRemaining = 900.0f;
-    private double pinkStringRemaining = 900.0f;
+    public static double limeStringRemaining4 = 900.0f;
+    public static double pinkStringRemainin4 = 900.0f;
     public TMP_Text limeMessageText;
     public TMP_Text pinkMessageText;
     public TMP_Text townsConnectedText;
@@ -329,14 +329,14 @@ public class InputHandler4 : MonoBehaviour
         }
 
         lineWidth = 0.1f; // Width of the line
-        limeStringRemaining = InputHandler3.limeStringRemaining;
-        pinkStringRemaining = 900.0f;
+        limeStringRemaining4 = InputHandler3.limeStringRemaining3;
+        pinkStringRemainin4 = 900.0f;
         points = new Point[78];
         numberTownsVisited4 = 0;
         numberTownsMissed4 = 78;
         numberNullPathways4 = 0;
 
-  
+        ScoreHandler.nextSceneNumber = 5;
     }
 
     void Update()
@@ -433,13 +433,13 @@ public class InputHandler4 : MonoBehaviour
                 
                 if(currentStringColour.Equals("lime"))
                 {
-                    limeStringRemaining -= distance;
-                    limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
+                    limeStringRemaining4 -= distance;
+                    limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining4.ToString("0.00") + "cm");
                 }
                 else
                 {
-                    pinkStringRemaining -= distance;
-                    pinkMessageText.SetText("Pink string remaining: " + "\n" + pinkStringRemaining.ToString("0.00") + "cm");
+                    pinkStringRemainin4 -= distance;
+                    pinkMessageText.SetText("Pink string remaining: " + "\n" + pinkStringRemainin4.ToString("0.00") + "cm");
                 }
 
                 
@@ -494,7 +494,7 @@ public class InputHandler4 : MonoBehaviour
 
                 //Debug.Log("Number of invalid pathways = " + numberNullPathways);
                 //Debug.Log("Number of Towns missed = " + numberTownsMissed);
-                //double score = limeStringRemaining - (numberNullPathways4 * 20 + numberTownsMissed4 * 20);
+                //double score = limeStringRemaining4 - (numberNullPathways4 * 20 + numberTownsMissed4 * 20);
                 //Debug.Log("Score = " + numberNullPathways);
                 
                 isDrawing = false;
@@ -590,7 +590,7 @@ public class InputHandler4 : MonoBehaviour
 
         // Check if each of the pathways created is the same as an existing pathways
         // If not tally each missed pathway
-        double score = limeStringRemaining;
+        double score = limeStringRemaining4;
         if (pathwaysScenario4.Count > 1)
         {
             int numberPathwaysMissed = 0;
@@ -624,13 +624,13 @@ public class InputHandler4 : MonoBehaviour
         Debug.Log("Number of missed towns: " + numberTownsMissed4);
 
         // Calculate Score
-        score = (limeStringRemaining + pinkStringRemaining) - numberTownsMissed4 * 20 - numberNullPathways4 * 20 - numberMultiColourCross * 50;
+        score = (limeStringRemaining4 + pinkStringRemainin4) - numberTownsMissed4 * 20 - numberNullPathways4 * 20 - numberMultiColourCross * 50;
         totalScore4 = Convert.ToInt32(score);
         if(totalScore4 < 0) { totalScore4 = 0; }
         Debug.Log("Score: " + score);
         
         // Move to Score scene
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(9);
     }
 
     public void selectLimeButtonClick()
@@ -646,11 +646,11 @@ public class InputHandler4 : MonoBehaviour
     public void undo2()
     {
         float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
-        limeStringRemaining += distance;
+        limeStringRemaining4 += distance;
         lineRenderer.positionCount = 0;
         numberTownsMissed4 += 1;
         townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78 - numberTownsMissed4).ToString() + "/78");
-        limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
+        limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining4.ToString("0.00") + "cm");
     }
 
 }

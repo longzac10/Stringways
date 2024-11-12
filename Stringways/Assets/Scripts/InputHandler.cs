@@ -307,6 +307,8 @@ public class InputHandler : MonoBehaviour
         numberTownsMissed = 78;
         numberNullPathways = 0;
         totalScore = 0;
+        ScoreHandler.nextSceneNumber = 2;
+
     }
 
     void Update()
@@ -453,7 +455,7 @@ public class InputHandler : MonoBehaviour
         
 
         // Move to Score scene
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(9);
     }
 
     public void checkInvalidPathways()

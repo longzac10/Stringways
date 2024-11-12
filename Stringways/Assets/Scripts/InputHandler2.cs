@@ -313,6 +313,7 @@ public class InputHandler2 : MonoBehaviour
         lineWidth = 0.1f; // Width of the line
         limeStringRemaining2 = InputHandler.limeStringRemaining;
         limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining2.ToString("0.00") + "cm");
+        ScoreHandler.nextSceneNumber = 3;
     }
 
     void Update()
@@ -497,7 +498,7 @@ public class InputHandler2 : MonoBehaviour
         
 
         // Move to Score scene
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(9);
     }
 
     public void undo2()
