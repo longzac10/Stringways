@@ -313,7 +313,7 @@ public class InputHandler2 : MonoBehaviour
         lineWidth = 0.1f; // Width of the line
         limeStringRemaining2 = InputHandler.limeStringRemaining;
         limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining2.ToString("0.00") + "cm");
-        ScoreHandler.nextSceneNumber = 3;
+        ScoreHandler.nextSceneNumber = 2;
     }
 
     void Update()
@@ -341,12 +341,7 @@ public class InputHandler2 : MonoBehaviour
                 pathwaysScenario2.Add(firstObject.transform.position);
                 // Add Second point of pathway drawn
                 pathwaysScenario2.Add(secondObject.transform.position);
-                /*
-                foreach (Vector2 point in pathwaysScenario2)
-                {
-                    Debug.Log(point.x.ToString() + ", " + point.y.ToString());
-                }
-                */
+
                 click = false;
             }
         }
@@ -409,8 +404,6 @@ public class InputHandler2 : MonoBehaviour
                 townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78-numberTownsMissed2).ToString() + "/78");
                 invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways2.ToString());
 
-                //Debug.Log("Number of invalid pathways = " + numberNullPathways);
-                //Debug.Log("Number of Towns missed = " + numberTownsMissed);
                 double score = limeStringRemaining2 - (numberNullPathways2 * 20 + numberTownsMissed2 * 20);
                 //Debug.Log("Score = " + numberNullPathways);
                 
@@ -418,19 +411,7 @@ public class InputHandler2 : MonoBehaviour
                 click = true;
             }
         }
-        /*
-        if (rayHit.collider != null && rayHit.collider.gameObject.tag == "Finish")
-        {
-            Debug.Log("Number of invalid pathways = " + numberNullPathways);
-            Debug.Log("Number of Towns missed = " + numberNullPathways);
-            Debug.Log("Score = " + numberNullPathways);
-        }
-        
-        if (rayHit.collider != null)
-        {
-            Debug.Log(rayHit.collider.gameObject.name);
-        }
-        */
+
     }
 
     private void OnRightClick()

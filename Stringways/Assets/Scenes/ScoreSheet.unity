@@ -6433,6 +6433,7 @@ MonoBehaviour:
   s650Tally: {fileID: 1204881999}
   s6C: {fileID: 609007357}
   s6total: {fileID: 242236451}
+  totalScore: {fileID: 1882233100}
 --- !u!1 &2105461909
 GameObject:
   m_ObjectHideFlags: 0

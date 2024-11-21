@@ -327,7 +327,7 @@ public class InputHandler3 : MonoBehaviour
 
         totalScore3 = 0;
 
-        ScoreHandler.nextSceneNumber = 4;
+        ScoreHandler.nextSceneNumber = 3;
     }
 
     void Update()

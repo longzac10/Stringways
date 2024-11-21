@@ -2151,7 +2151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256559, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -16710,8 +16710,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newString: {fileID: 3464213934811003258, guid: ac5ba2af13524e34896b6576bd8440e1, type: 3}
-  lineMaterial: {fileID: 0}
-  lineWidth: 0.1
   limeMessageText: {fileID: 2140710851}
   townsConnectedText: {fileID: 1779775670}
   invalidPathwaysText: {fileID: 1178733530}

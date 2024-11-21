@@ -53,6 +53,8 @@ public class ScoreHandler : MonoBehaviour
     public TMP_Text s6C;
     public TMP_Text s6total;
 
+    public TMP_Text totalScore;
+
     public static int nextSceneNumber;
 
     // Start is called before the first frame update
@@ -87,10 +89,28 @@ public class ScoreHandler : MonoBehaviour
         s450Tally.SetText(InputHandler4.numberMultiColourCross.ToString());
         s4C.SetText((InputHandler4.numberMultiColourCross * 50).ToString());
         s4total.SetText(InputHandler4.totalScore4.ToString());
-        
 
+        s5String.SetText((InputHandler5.limeStringRemaining5 + InputHandler5.pinkStringRemaining5).ToString("0"));
+        s5mtown.SetText(InputHandler5.numberTownsMissed5.ToString());
+        //s4mpath.SetText(InputHandler5.numberNullPathways5.ToString());
+        s5B.SetText((InputHandler5.numberTownsMissed5 * 20).ToString("0"));
+        s550Tally.SetText((InputHandler5.numberMultiColourCross + InputHandler5.numberNonBlack).ToString());
+        s5C.SetText(((InputHandler5.numberMultiColourCross + InputHandler5.numberNonBlack) * 50).ToString());
+        s5total.SetText(InputHandler5.totalScore5.ToString());
 
+        s6String.SetText((InputHandler6.limeStringRemaining6 + InputHandler6.pinkStringRemaining6).ToString("0"));
+        s6mtown.SetText(InputHandler6.numberTownsMissed6.ToString());
+        //s4mpath.SetText(InputHandler5.numberNullPathways5.ToString());
+        s6B.SetText((InputHandler6.numberTownsMissed6 * 20).ToString("0"));
+        s650Tally.SetText((InputHandler6.numberMultiColourCross + InputHandler6.numberIncorrectColourMatch).ToString());
+        s6C.SetText(((InputHandler6.numberMultiColourCross + InputHandler6.numberIncorrectColourMatch) * 50).ToString());
+        s6total.SetText(InputHandler6.totalScore6.ToString());
+
+        string finalScore = (InputHandler.totalScore + InputHandler2.totalScore2 + InputHandler3.totalScore3 +
+                            InputHandler4.totalScore4 + InputHandler5.totalScore5 + InputHandler6.totalScore6).ToString();
+        totalScore.SetText(finalScore);
 
     }
+
 }
 

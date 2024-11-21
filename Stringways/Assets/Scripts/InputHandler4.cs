@@ -322,7 +322,7 @@ public class InputHandler4 : MonoBehaviour
         limeStringRemaining4 = InputHandler3.limeStringRemaining3;
         pinkStringRemaining4 = 900.0f;
 
-        ScoreHandler.nextSceneNumber = 5;
+        ScoreHandler.nextSceneNumber = 4;
     }
 
     void Update()
@@ -454,6 +454,7 @@ public class InputHandler4 : MonoBehaviour
        
     }
 
+    // Counts the number of times two lines cross
     private int CountIntersectionsBetweenTaggedLines()
     {
         int intersectionCount = 0;

@@ -387,8 +387,7 @@ public class InputHandler7 : MonoBehaviour
             if (rayHit.collider != null && rayHit.collider.gameObject.tag.Contains("Town"))
             {
                 if (numberTownsMissed7 == 78)
-                {
-                    //
+                {                  
                     if (firstObject.tag == "TownGreen")
                     {
                         startGreen = 0;
@@ -411,9 +410,9 @@ public class InputHandler7 : MonoBehaviour
                 if (secondObject.tag == "TownGreen")
                 {
                     previousColour = "green";
-                    finishGreen = 0;
-                    nonGreen--;
-                    Debug.Log("f green");
+                    //finishGreen = 0;
+                    //nonGreen--;
+                    //Debug.Log("f green");
                 }
 
 
