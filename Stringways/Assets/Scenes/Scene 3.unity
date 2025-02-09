@@ -2111,11 +2111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256557, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 34.75
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256557, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 460.61
+      value: 482
       objectReference: {fileID: 0}
     - target: {fileID: 9049351821729256557, guid: 34feffd2aaba53c439664131da587fe7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3310,8 +3310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 722.99005, y: -68.96}
-  m_SizeDelta: {x: 247.0474, y: 455.34}
+  m_AnchoredPosition: {x: 779.71, y: -68.96}
+  m_SizeDelta: {x: 299.84, y: 455.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485181057
 MonoBehaviour:
@@ -7631,7 +7631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 408, y: 336}
+  m_AnchoredPosition: {x: 408, y: 312}
   m_SizeDelta: {x: 1756.1893, y: 935.2269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940789421
@@ -7686,8 +7686,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13702,8 +13702,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -338.47562, y: 31.943542}
-  m_SizeDelta: {x: 924, y: 64.335205}
+  m_AnchoredPosition: {x: -358.1439, y: 31.943527}
+  m_SizeDelta: {x: 963.3365, y: 64.3352}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614984334
 MonoBehaviour:
@@ -14809,7 +14809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -718, y: 337}
+  m_AnchoredPosition: {x: -686, y: 316}
   m_SizeDelta: {x: 1756.1893, y: 935.2269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744999510
@@ -14860,8 +14860,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 130
+  m_fontSizeBase: 130
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15095,7 +15095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Number Towns Connected:
+  m_text: 'Towns Connected:
 
     0/78'
   m_isRightToLeft: 0
@@ -16523,8 +16523,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -62.94995, y: -68}
-  m_SizeDelta: {x: 57.151, y: 64.333984}
+  m_AnchoredPosition: {x: -53.3114, y: -57.150024}
+  m_SizeDelta: {x: 48.1812, y: 54.237}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933383129
 MonoBehaviour:
@@ -19275,9 +19275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 10
+  m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1980, y: 1080}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
