@@ -57,7 +57,6 @@ public class ScoreHandler : MonoBehaviour
 
     public static int nextSceneNumber;
 
-    // Start is called before the first frame update
     void Start()
     {
         s1String.SetText((InputHandler.limeStringRemaining + 900.0f).ToString("0"));

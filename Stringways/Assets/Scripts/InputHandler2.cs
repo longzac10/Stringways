@@ -479,7 +479,7 @@ public class InputHandler2 : MonoBehaviour
         
 
         // Move to Score scene
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(8);
     }
 
     public void undo2()

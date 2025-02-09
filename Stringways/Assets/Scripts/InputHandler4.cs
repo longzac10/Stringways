@@ -579,7 +579,7 @@ public class InputHandler4 : MonoBehaviour
         Debug.Log("Score: " + score);
         
         // Move to Score scene
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(8);
     }
 
     public void selectLimeButtonClick()

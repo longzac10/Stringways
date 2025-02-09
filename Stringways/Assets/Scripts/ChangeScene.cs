@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    private int sceneNumber = 1;
     public void MovetoScene(int sceneID)
     {
-        sceneNumber++;
+       
+        SceneManager.LoadScene(sceneID);
+        
+    }
+
+    public void MovetoNextScene()
+    {
         Debug.Log("Scene increase");
+        ScoreHandler.nextSceneNumber += 1;
         SceneManager.LoadScene(ScoreHandler.nextSceneNumber);
         
     }

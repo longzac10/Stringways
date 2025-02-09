@@ -455,7 +455,7 @@ public class InputHandler : MonoBehaviour
         
 
         // Move to Score scene
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(8);
     }
 
     public void checkInvalidPathways()
