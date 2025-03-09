@@ -339,6 +339,8 @@ public class InputHandler : MonoBehaviour
                 pathwaysScenario1.Add(firstObject.transform.position);
                 // Add Second point of pathway drawn
                 pathwaysScenario1.Add(secondObject.transform.position);
+
+                checkInvalidPathways();
                 
                 click = false;
             }
@@ -379,10 +381,10 @@ public class InputHandler : MonoBehaviour
                 float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 2;
                 limeStringRemaining -= distance;
 
-                checkInvalidPathways();
+                //checkInvalidPathways();
                 limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
                 townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78-numberTownsMissed).ToString() + "/78");
-                invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways.ToString());
+                //invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways.ToString());
 
                 double score = limeStringRemaining - (numberNullPathways * 20 + numberTownsMissed * 20);
 
@@ -469,7 +471,7 @@ public class InputHandler : MonoBehaviour
         // Check if each of the pathways created is the same as an existing pathways
         // If not tally each missed pathway
         double score = limeStringRemaining;
-        if (pathwaysScenario1.Count >= 1)
+        if (pathwaysScenario1.Count >= 0)
         {
             int numberPathwaysMissed = 0;
             for (int i = 0; i < pathwaysScenario1.Count; i += 2)
@@ -493,6 +495,7 @@ public class InputHandler : MonoBehaviour
             }
             numberNullPathways = numberPathwaysMissed;
             Debug.Log("Number of Invalid Pathways: " + numberNullPathways);
+            invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways.ToString());
         }
     }
 
