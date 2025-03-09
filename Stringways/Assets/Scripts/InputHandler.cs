@@ -35,6 +35,9 @@ public class InputHandler : MonoBehaviour
     // Vector2 arrayList of all pairs of points containing all the pathways that the player creates for Scenario1
     private List<Vector2> pathwaysScenario1 = new List<Vector2>();
 
+    // List of all line renderers
+    private List<GameObject> drawnLines = new List<GameObject>();
+
     // Vector2 array of all pairs of points representing all the existing pathways
     #region Existing Pathways
     public Vector2[] existingPathways = new Vector2[]
@@ -382,7 +385,10 @@ public class InputHandler : MonoBehaviour
                 invalidPathwaysText.SetText("Number Invalid Paths: " + "\n" + numberNullPathways.ToString());
 
                 double score = limeStringRemaining - (numberNullPathways * 20 + numberTownsMissed * 20);
-                
+
+                drawnLines.Add(newString);
+                Debug.Log(drawnLines.Count);
+
                 isDrawing = false;
                 click = true;
             }
@@ -493,12 +499,45 @@ public class InputHandler : MonoBehaviour
     // Undo method removes the last placed pathway, gets it distance and add the value back to total string length left
     public void undo()
     {
-        float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
-        limeStringRemaining += distance;
-        lineRenderer.positionCount = 0;
-        numberTownsMissed += 1;
-        townsConnectedText.SetText("Number Towns Connected:  " + "\n" + (78 - numberTownsMissed).ToString() + "/78");
-        limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
+
+        if(numberTownsMissed < 78 && pathwaysScenario1.Count >= 2)
+        {
+            // Add the distance back to the total
+            //float distance = Vector3.Distance(firstObject.transform.position, secondObject.transform.position) / 3;
+            Vector2 previousFirstObject = pathwaysScenario1[pathwaysScenario1.Count - 2];
+            Vector2 previousSecondObject = pathwaysScenario1[pathwaysScenario1.Count - 1];
+            float distance = Vector3.Distance(previousFirstObject, previousSecondObject) / 2;
+            limeStringRemaining += distance;
+
+            // Remove the line
+
+            // Get the last drawn line
+            LineRenderer lastDrawnLine = drawnLines[drawnLines.Count - 1].GetComponent<LineRenderer>();
+            // Delete the line
+            lastDrawnLine.positionCount = 0;
+            // Remove the line from the list
+            drawnLines.RemoveAt(drawnLines.Count - 1);
+
+            // Remove the two points from list
+            pathwaysScenario1.Remove(previousSecondObject);
+            pathwaysScenario1.Remove(previousFirstObject);
+
+            // Update the UI
+            if(drawnLines.Count == 0)
+            {
+                numberTownsMissed += 2;
+            }
+            else
+            {
+                numberTownsMissed += 1;
+            }
+            
+            townsConnectedText.SetText("Towns Connected:  " + "\n" + (78 - numberTownsMissed).ToString() + "/78");
+            limeMessageText.SetText("Lime string remaining: " + "\n" + limeStringRemaining.ToString("0.00") + "cm");
+            checkInvalidPathways();
+        }
+        
+        
     }
 
 }
