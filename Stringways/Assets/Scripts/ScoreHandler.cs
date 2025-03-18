@@ -59,7 +59,7 @@ public class ScoreHandler : MonoBehaviour
 
     void Start()
     {
-        s1String.SetText((InputHandler.limeStringRemaining + 900.0f).ToString("0"));
+        s1String.SetText(InputHandler.limeStringRemaining.ToString("0"));
         s1mtown.SetText(InputHandler.numberTownsMissed.ToString());
         s1mpath.SetText(InputHandler.numberNullPathways.ToString());
         s1B.SetText(((InputHandler.numberTownsMissed + InputHandler.numberNullPathways) * 20).ToString("0"));
