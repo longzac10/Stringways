@@ -49,6 +49,7 @@ MonoBehaviour:
   townNumberValue: 0
   x: 0
   y: 0
+  colour: 
 --- !u!212 &4785159738308241605
 SpriteRenderer:
   m_ObjectHideFlags: 0

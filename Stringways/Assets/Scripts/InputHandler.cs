@@ -331,21 +331,18 @@ public class InputHandler : MonoBehaviour
         {
             if (click && lineRenderer != null)
             {
-                if(pathwaysScenario1.Contains(firstObject.transform.position) || pathwaysScenario1.Contains(secondObject.transform.position) || pathwaysScenario1.Count == 0)
-                {
-                    // Draw Line between two points
-                    lineRenderer.SetPosition(0, firstObject.transform.position);
-                    lineRenderer.SetPosition(1, secondObject.transform.position);
+                // Draw Line between two points
+                lineRenderer.SetPosition(0, firstObject.transform.position);
+                lineRenderer.SetPosition(1, secondObject.transform.position);
 
-                    // Add First point of pathway drawn
-                    pathwaysScenario1.Add(firstObject.transform.position);
-                    // Add Second point of pathway drawn
-                    pathwaysScenario1.Add(secondObject.transform.position);
+                // Add First point of pathway drawn
+                pathwaysScenario1.Add(firstObject.transform.position);
+                // Add Second point of pathway drawn
+                pathwaysScenario1.Add(secondObject.transform.position);
 
-                    checkInvalidPathways();
+                checkInvalidPathways();
 
-                    click = false;
-                }
+                click = false;
             }
         }
     }

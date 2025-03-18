@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3464213934811003261}
   - component: {fileID: -86360069991901240}
   - component: {fileID: 3283746919157369963}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: String
   m_TagString: lime
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.1
+  m_EdgeRadius: 0.01
   m_Points:
   - {x: -6.05, y: -6}
   - {x: -5.95, y: -6}
