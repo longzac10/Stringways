@@ -23,7 +23,7 @@ public class InputHandler2 : MonoBehaviour
     public float lineWidth = 0.1f; // Width of the line
     private bool isDrawing = false;
     private bool click = false;
-    public static double limeStringRemaining2 = 900.0f;
+    public static double limeStringRemaining2;
     //private double pinkStringRemaining = 900.0f;
     public TMP_Text limeMessageText;
     public TMP_Text townsConnectedText;
@@ -490,9 +490,9 @@ public class InputHandler2 : MonoBehaviour
         Debug.Log("Number of missed towns: " + numberTownsMissed2);
 
         // Calculate Score
-        score = (limeStringRemaining2 + 900.0f) - numberTownsMissed2 * 20 - numberNullPathways2 * 20 - totalRed * 50;
+        score = limeStringRemaining2 - numberTownsMissed2 * 20 - numberNullPathways2 * 20 - totalRed * 50;
         totalScore2 = Convert.ToInt32(score);
-        if(totalScore2 < 0) { totalScore2 = 0; }
+        //if(totalScore2 < 0) { totalScore2 = 0; }
         Debug.Log("Score: " + score);
         
 
