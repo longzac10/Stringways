@@ -952,8 +952,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your goal is to connect towns in the most efficient way possible. Limiting
-    distance travelled and maximizing your score.
+  m_text: 'The Stringways board features existing black pathways connecting bolts
+    (representing towns). The green bolt marks the Capital City. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -365,3 +365,76 @@ Received Import Request.
   path: Assets/Scenes/Menu3.unity
   artifactKey: Guid(a65af75ed7225c849ac9cf1a897e62e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Menu3.unity using Guid(a65af75ed7225c849ac9cf1a897e62e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f29208a3b8a6129dc6c589d9b21b6761') in 0.021579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15143.787104 seconds.
+  path: Assets/Scenes/Menu2.unity
+  artifactKey: Guid(319f375b98b0fa240b6792e103459001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu2.unity using Guid(319f375b98b0fa240b6792e103459001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '366131cf0605a2bfe2abf7bb8f858f85') in 0.027748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.397899 seconds.
+  path: Assets/Scenes/Menu4.unity
+  artifactKey: Guid(319f375b98b0fa240b6792e103459001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu4.unity using Guid(319f375b98b0fa240b6792e103459001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e13262b739f3bb6cd424d302402628dd') in 0.028311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 143.131012 seconds.
+  path: Assets/Scenes/MainMenu2.unity
+  artifactKey: Guid(a65af75ed7225c849ac9cf1a897e62e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainMenu2.unity using Guid(a65af75ed7225c849ac9cf1a897e62e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1228a9e89c4495a4b02ecc54b4f9cd5') in 0.021961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.825222 seconds.
+  path: Assets/Scenes/Menu3.unity
+  artifactKey: Guid(319f375b98b0fa240b6792e103459001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu3.unity using Guid(319f375b98b0fa240b6792e103459001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55617e27302d9ace6e3e0b2057fa9aa4') in 0.006396 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.719331 seconds.
+  path: Assets/Scenes/Menu2.unity
+  artifactKey: Guid(a65af75ed7225c849ac9cf1a897e62e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu2.unity using Guid(a65af75ed7225c849ac9cf1a897e62e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2dc82048f49ab5a4f9de9022d872654') in 0.003631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 68.293498 seconds.
+  path: Assets/Scenes/Menu3 1.unity
+  artifactKey: Guid(b2fd3143afc63e74a8b55494456c1ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu3 1.unity using Guid(b2fd3143afc63e74a8b55494456c1ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44b35cd7f5fc5f6186ddd9f08bce20c4') in 0.024853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.703705 seconds.
+  path: Assets/Scenes/Menu4.unity
+  artifactKey: Guid(b2fd3143afc63e74a8b55494456c1ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu4.unity using Guid(b2fd3143afc63e74a8b55494456c1ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73e3855826fc57b702b31ca08b493c45') in 0.003431 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3450.463659 seconds.
+  path: Assets/Scenes/Menu3.unity
+  artifactKey: Guid(319f375b98b0fa240b6792e103459001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu3.unity using Guid(319f375b98b0fa240b6792e103459001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18f98e1b08f1a922aec9efc823e9935f') in 0.008044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 136378.136762 seconds.
+  path: Assets/Scenes/ScoreSheet.unity
+  artifactKey: Guid(934dfc2a979ebba4ab63c7c94e40557b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/ScoreSheet.unity using Guid(934dfc2a979ebba4ab63c7c94e40557b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaa95b0feca513383173d1f8da06b379') in 0.028306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 68.627089 seconds.
+  path: Assets/Scenes/Menu4.unity
+  artifactKey: Guid(b2fd3143afc63e74a8b55494456c1ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu4.unity using Guid(b2fd3143afc63e74a8b55494456c1ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc3a6202b60cbb21a8d1f3ee76b0e8b4') in 0.029985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.216753 seconds.
+  path: Assets/Images/Screenshot 2025-04-18 135623.png
+  artifactKey: Guid(a6eb1064cb02f12439f34a1fda27f35f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Screenshot 2025-04-18 135623.png using Guid(a6eb1064cb02f12439f34a1fda27f35f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f85b8ecfaca9738ebc8cdb7a41ef14d0') in 0.229394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 134.735445 seconds.
+  path: Assets/Images/Screenshot 2025-04-18 135624.png
+  artifactKey: Guid(3ad6919e0e66be04f8dc08bb323ef123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Screenshot 2025-04-18 135624.png using Guid(3ad6919e0e66be04f8dc08bb323ef123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eacdf5c4356f168238c53cb026752b9d') in 0.049105 seconds 
+AssetImportWorkerClient::OnTransportError - code=10054 error=An existing connection was forcibly closed by the remote host.

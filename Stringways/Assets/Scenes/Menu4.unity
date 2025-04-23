@@ -853,8 +853,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076293945, y: -0.0000038146973}
-  m_SizeDelta: {x: 767.4761, y: 223.8906}
+  m_AnchoredPosition: {x: -0.000011146, y: -39}
+  m_SizeDelta: {x: 491.9669, y: 348.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997338376
 MonoBehaviour:
@@ -876,7 +876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 473c679a4a0b59945ae448617d29abf4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b28e79807961e1d46b528ec27cad9545, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -952,8 +952,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The game is split into different scenarios that define rules and limitations
-    when drawing pathways between towns.
+  m_text: Carefully read and follow each scenario to achieve as many points as possible.
+    Scoring will be calculated based on the amount of string remaining after each
+    scenario. Deductions to score will occur if you fail to follow scenario instructions.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
