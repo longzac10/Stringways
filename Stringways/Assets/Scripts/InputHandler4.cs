@@ -322,7 +322,7 @@ public class InputHandler4 : MonoBehaviour
         limeStringRemaining4 = InputHandler3.limeStringRemaining3;
         pinkStringRemaining4 = 900.0f;
 
-        ScoreHandler.nextSceneNumber = 9;
+        ScoreHandler.nextSceneNumber = 8;
     }
 
     void Update()

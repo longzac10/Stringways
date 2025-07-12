@@ -310,7 +310,7 @@ public class InputHandler : MonoBehaviour
         numberTownsMissed = 78;
         numberNullPathways = 0;
         totalScore = 0;
-        ScoreHandler.nextSceneNumber = 6;
+        ScoreHandler.nextSceneNumber = 5;
 
     }
 

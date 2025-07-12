@@ -331,7 +331,7 @@ public class InputHandler5 : MonoBehaviour
 
         limeStringRemaining5 = InputHandler4.limeStringRemaining4;
         pinkStringRemaining5 = InputHandler4.pinkStringRemaining4;
-        ScoreHandler.nextSceneNumber = 10;
+        ScoreHandler.nextSceneNumber = 9;
     }
 
     void Update()
