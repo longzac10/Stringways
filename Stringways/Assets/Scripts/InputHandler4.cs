@@ -322,7 +322,7 @@ public class InputHandler4 : MonoBehaviour
         limeStringRemaining4 = InputHandler3.limeStringRemaining3;
         pinkStringRemaining4 = 900.0f;
 
-        ScoreHandler.nextSceneNumber = 4;
+        ScoreHandler.nextSceneNumber = 9;
     }
 
     void Update()
@@ -575,11 +575,11 @@ public class InputHandler4 : MonoBehaviour
         // Calculate Score
         score = (limeStringRemaining4 + pinkStringRemaining4) - numberTownsMissed4 * 20 - numberNullPathways4 * 20 - numberMultiColourCross * 50;
         totalScore4 = Convert.ToInt32(score);
-        if(totalScore4 < 0) { totalScore4 = 0; }
+        //if(totalScore4 < 0) { totalScore4 = 0; }
         Debug.Log("Score: " + score);
         
         // Move to Score scene
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(12);
     }
 
     public void selectLimeButtonClick()

@@ -332,7 +332,7 @@ public class InputHandler6 : MonoBehaviour
         limeStringRemaining6 = InputHandler5.limeStringRemaining5;
         pinkStringRemaining6 = InputHandler5.pinkStringRemaining5;
 
-        ScoreHandler.nextSceneNumber = 6;
+        ScoreHandler.nextSceneNumber = 11;
     }
 
     void Update()
@@ -583,11 +583,11 @@ public class InputHandler6 : MonoBehaviour
         // Calculate Score
         double score = (limeStringRemaining6 + pinkStringRemaining6) - numberTownsMissed6 * 20 - numberMultiColourCross * 50 - numberIncorrectColourMatch * 50;
         totalScore6 = Convert.ToInt32(score);
-        if(totalScore6 < 0) { totalScore6 = 0; }
+        //if(totalScore6 < 0) { totalScore6 = 0; }
         Debug.Log("Score: " + score);
         
         // Move to Score scene
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(12);
     }
 
     public void selectLimeButtonClick()

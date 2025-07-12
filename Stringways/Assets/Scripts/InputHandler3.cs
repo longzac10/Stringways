@@ -331,7 +331,7 @@ public class InputHandler3 : MonoBehaviour
 
         totalScore3 = 0;
 
-        ScoreHandler.nextSceneNumber = 3;
+        ScoreHandler.nextSceneNumber = 8;
     }
 
     void Update()
@@ -552,7 +552,7 @@ public class InputHandler3 : MonoBehaviour
         
 
         // Move to Score scene
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(12);
     }
 
     public void checkInvalidPathways()
